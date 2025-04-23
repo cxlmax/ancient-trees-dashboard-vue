@@ -1073,7 +1073,7 @@ onMounted(() => init())
                         </div>
                     </div>
                 </div>
-                <div class="layer-wrap layer-wrap_evysrY" id="1w-nXv6zuc0RqzTC8W2g">
+                <!-- <div class="layer-wrap layer-wrap_evysrY" id="1w-nXv6zuc0RqzTC8W2g">
                     <div class="layer-main">
                         <div class="group"
                             :style="{ transform: `matrix(1, 0, 0, 1, -63, -598)` }"
@@ -1104,7 +1104,7 @@ onMounted(() => init())
                 </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                         </div>
                     </div>
                 </div>

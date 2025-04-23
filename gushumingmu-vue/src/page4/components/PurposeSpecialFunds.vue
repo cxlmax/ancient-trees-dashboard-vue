@@ -127,9 +127,9 @@ const option = ref({
       inverse: true,
       axisLabel: {
         color: "#ABCCFF",
-        fontSize: 12,
+        fontSize: 15,
         interval: 0,
-        show: true,
+        show: false,
         verticalAlign: "top",
       },
       axisLine: {
@@ -173,16 +173,16 @@ const option = ref({
         position: "middle",
         padding: [-18, 0, 0, 0],
         color: "#16C1A6",
-        fontSize: 12,
-        formatter: "{title|{b}}  {value|{c}}",
+        fontSize: 15,
+        formatter: "{title|{b}} ",
         rich: {
           title: {
             color: "#FFFFFF",
-            fontSize: 12,
+            fontSize: 15,
             padding: [0, 288, 0, 0],
           },
           value: {
-            fontSize: 14,
+            fontSize: 16,
             width: 50,
             align: "right",
             padding: [0, 0, 0, 0],

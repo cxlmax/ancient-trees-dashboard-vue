@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1082" viewBox="0 0 2560 1082">
-  <!-- 风险预警动态面板 - 数据看板区的中下(30%) -->
-  <g id="risk-warning-panel" transform="translate(1900, 490)">
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="170" viewBox="0 0 400 170">
     <!-- 强风状态指示器 -->
-    <g id="wind-warning" transform="translate(20, 80)">
+    <g id="wind-warning" transform="translate(20, 0)">
       <rect x="0" y="0" width="160" height="170" rx="5" fill="#181919" stroke="#292929" stroke-width="1" />
       
       <!-- 标题 -->
@@ -25,7 +23,7 @@
     </g>
     
     <!-- 洪涝状态指示器 -->
-    <g id="flood-warning" transform="translate(200, 80)">
+    <g id="flood-warning" transform="translate(200, 0)">
       <rect x="0" y="0" width="160" height="170" rx="5" fill="#181919" stroke="#292929" stroke-width="1" />
       
       <!-- 标题 -->
@@ -49,7 +47,7 @@
     </g>
     
     <!-- 应对措施折叠面板 (初始隐藏) -->
-    <g id="measures-panel" transform="translate(20, 80)" opacity="0" class="fade-in">
+    <g id="measures-panel" transform="translate(20, 0)" opacity="0" class="fade-in">
       <rect x="0" y="0" width="344" height="170" rx="5" fill="#181919" stroke="#01FCE3" stroke-width="1" filter="url(#cardShadow)" />
       
       <!-- 标题 -->
@@ -102,5 +100,4 @@
       <line x1="320" y1="26" x2="328" y2="34" stroke="#FFFFFF" stroke-width="1.5" />
       <line x1="328" y1="26" x2="320" y2="34" stroke="#FFFFFF" stroke-width="1.5" />
     </g>
-  </g>
 </svg>
