@@ -77,13 +77,14 @@ onMounted(() => init())
                             </div>
                     </div>
                 </div>
-                    <div class="layer-wrap layer-wrap_jMwYrY" id="vVQNBVrdBVJVGf8HhO9I">
+                <!--顶部选项卡-->
+                    <!-- <div class="layer-wrap layer-wrap_jMwYrY" id="vVQNBVrdBVJVGf8HhO9I">
                         <div class="layer-main">
                             <div class="layer" >
                                     <ZvInteractionSelectXaDX />
                             </div>
                     </div>
-                </div>
+                </div> -->
                     <div class="layer-wrap layer-wrap_NfYFel" id="uoIJX82PdmdFlXQVyCr3">
                         <div class="layer-main">
                             <div class="layer" >
