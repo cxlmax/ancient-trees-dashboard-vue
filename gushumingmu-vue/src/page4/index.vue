@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount, reactive } from 'vue'
+
 /** 导入场景 */
 import bgScene from './scene.vue'
 /** 导入当前页面基础信息 */
@@ -27,6 +28,7 @@ import ZvChartBarPolarGuZc from './components/zv-chart-bar-polar-GuZc/index.vue'
 import ZvChartBarHorizontalpXST from './components/zv-chart-bar-horizontal-pXST/index.vue'
 import ZvTextTextDynamicvOdx from './components/zv-text-text-dynamic-vOdx/index.vue'
 import ZvChartOtherRadarAyVL from './components/zv-chart-other-radar-AyVL/index.vue'
+import PurposeSpecialFunds from "./components/PurposeSpecialFunds.vue";
 /** 动态自适应分辨率 */
 const { pageRef, transform } = useAutoSize1(2560, 1080, true)
 /** 页面加载状态 */
@@ -1129,6 +1131,7 @@ onMounted(() => init())
                     <div class="layer-wrap layer-wrap_UgIInJ" id="UfuhuRF42NzOI0SsrtI9">
                         <div class="layer-main">
                             <div class="layer" >
+                                <PurposeSpecialFunds></PurposeSpecialFunds>
                                     <ZvChartBarHorizontalpXST />
                             </div>
                     </div>
