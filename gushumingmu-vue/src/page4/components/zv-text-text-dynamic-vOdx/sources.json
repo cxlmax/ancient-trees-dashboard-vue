@@ -1,0 +1,1 @@
+[{"name":"动态文本","id":"57","source":{"mapping":[{"mapping":"value","name":"value","label":"值","type":"number","status":true}],"static":[{"value":"86分"}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"static"}}]

@@ -1,0 +1,103 @@
+export default [
+  {
+    name: "广州市",
+    enName: "guangzhou",
+    center: [113.280637, 23.125178],
+    centroid: [113.544372, 23.329249],
+    value: 100,
+  },
+  {
+    name: "韶关市",
+    enName: "saoguan",
+    center: [113.591544, 24.801322],
+    centroid: [113.779323, 24.81941],
+    value: 32,
+  },
+  {
+    name: "深圳市",
+    enName: "shenzhen",
+    center: [114.085947, 22.547],
+    centroid: [114.143142, 22.643377],
+    value: 79,
+  },
+  {
+    name: "珠海市",
+    enName: "zhuhai",
+    center: [113.553986, 22.224979],
+    centroid: [113.337286, 22.160135],
+    value: 68,
+  },
+
+  {
+    name: "湛江市",
+    enName: "zhanjiang",
+    center: [110.364977, 21.274898],
+    centroid: [110.109828, 21.047893],
+    value: 48,
+  },
+  {
+    name: "茂名市",
+    enName: "maoming",
+    center: [110.919229, 21.659751],
+    centroid: [110.958736, 22.008884],
+    value: 51,
+  },
+  {
+    name: "肇庆市",
+    enName: "jiqing",
+    center: [112.472529, 23.051546],
+    centroid: [112.210411, 23.536359],
+    value: 26,
+  },
+
+  {
+    name: "汕尾市",
+    enName: "sanwei",
+    center: [115.364238, 22.774485],
+    centroid: [115.53778, 23.004558],
+    value: 18,
+  },
+  {
+    name: "河源市",
+    enName: "heyuan",
+    center: [114.697802, 23.746266],
+    centroid: [114.962729, 24.043541],
+    value: 30,
+  },
+  {
+    name: "阳江市",
+    enName: "yangjiang",
+    center: [111.975107, 21.859222],
+    centroid: [111.779569, 22.02617],
+    value: 31,
+  },
+  {
+    name: "清远市",
+    enName: "qingyuan",
+    center: [113.051227, 23.685022],
+    centroid: [112.879397, 24.313361],
+    value: 32,
+  },
+  {
+    name: "东莞市",
+    enName: "dongguan",
+    center: [113.746262, 23.046237],
+    centroid: [113.879966, 22.931879],
+    value: 22,
+  },
+
+  {
+    name: "潮州市",
+    enName: "chaozhou",
+    center: [116.632301, 23.661701],
+    centroid: [116.790217, 23.783155],
+    value: 22,
+  },
+  {
+    name: "揭阳市",
+    enName: "xieyang",
+    center: [116.355733, 23.543778],
+    centroid: [116.124317, 23.334057],
+    value: 31,
+  },
+];
