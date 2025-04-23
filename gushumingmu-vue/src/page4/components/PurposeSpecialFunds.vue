@@ -12,21 +12,17 @@ import * as echarts from "echarts";
 import VChart from "vue-echarts";
 const cardRef = ref(null);
 const height = ref(280);
-let index = 0;
-const show = 4;
 const names = [
-  "扶贫资金",
-  "学校教育",
-  "医疗卫生",
-  "社区改造",
-  "环境工程",
-  "渔业资金",
+  "pH值(6.3)",
+  "水分(60%)",
+  "有机质(3%)",
+  "氮含量(150mg/kg)",
+  "磷含量(15mg/kg)",
+  "钾含量(160mg/kg)",
 ];
-const values = [100, 80, 60, 50, 30, 10];
-const maxValue = values.reduce((prev, next) => Math.max(prev, next), 0);
-const maxData = new Array(show).fill(maxValue);
-
-let startName = names.slice(index, show);
+const values = [63, 60, 30, 75, 15, 80];
+const maxValue = 100;
+const maxData = new Array(names.length).fill(maxValue);
 const dataStyle = [
   {
     value: 0,
@@ -133,7 +129,7 @@ const option = ref({
         color: "#ABCCFF",
         fontSize: 12,
         interval: 0,
-        show: false,
+        show: true,
         verticalAlign: "top",
       },
       axisLine: {
@@ -145,7 +141,7 @@ const option = ref({
       splitLine: {
         show: false,
       },
-      data: startName,
+      data: names,
     },
     {
       inverse: true,
@@ -178,7 +174,7 @@ const option = ref({
         padding: [-18, 0, 0, 0],
         color: "#16C1A6",
         fontSize: 12,
-        formatter: "{title|{b}}  {value|{c}}  {unit|亿元}",
+        formatter: "{title|{b}}  {value|{c}}",
         rich: {
           title: {
             color: "#FFFFFF",
@@ -190,11 +186,6 @@ const option = ref({
             width: 50,
             align: "right",
             padding: [0, 0, 0, 0],
-          },
-          unit: {
-            color: "#ABCCFF",
-            fontSize: 12,
-            align: "right",
           },
         },
       },
@@ -221,42 +212,28 @@ const option = ref({
     },
   ],
 });
-function getData(data, index, length) {
-  const result = [];
-  const dataLength = data.length;
-  for (let i = 0; i < length; i++) {
-    const currentIndex = (index + i) % dataLength;
-    result.push(data[currentIndex]);
-  }
-
-  return result;
-}
-
 // 获取Series数据
 function getSeriesData() {
-  let currentValues = getData(values, index, show);
   let data = [];
-  dataStyle.forEach((item, index) => {
-    item.value = currentValues[index];
+  values.forEach((value, index) => {
+    // 使用不同颜色的样式
+    const styleIndex = index % dataStyle.length;
+    const item = {
+      value: value,
+      itemStyle: dataStyle[styleIndex].itemStyle
+    };
     data.push(item);
   });
   return data;
 }
+
 // 设置图表数据
 function setOptionsData() {
-  let currentNames = getData(names, index, show);
-  option.value.yAxis[0].data = currentNames;
   option.value.series[0].data = getSeriesData();
 }
+
 onMounted(() => {
   setOptionsData();
-  setInterval(() => {
-    index++;
-    if (index >= names.length) {
-      index = 0;
-    }
-    setOptionsData();
-  }, 3000);
 });
 onBeforeUnmount(() => {});
 </script>
