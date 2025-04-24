@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, reactive, watch, nextTick } from 'vue'
 /** 导入场景 */
 import bgScene from './scene.vue'
 /** 导入当前页面基础信息 */
@@ -32,23 +32,151 @@ import ZvTextOverNumbervWoK from './components/zv-text-over-number-vWoK/index.vu
 const { pageRef, transform } = useAutoSize1(2559.9, 1080, false)
 /** 页面加载状态 */
 const pageLoading = ref<boolean>(true)
+const dataLoading = ref<boolean>(true)
 /** 页面基础信息存储 */
 const pageStore = usePageStore()
 const { currentPage } = storeToRefs(pageStore)
+
+/** 记录API请求状态 */
+const apiRequests = reactive({
+  totalRequests: 0,
+  completedRequests: 0,
+  progress: 0,
+  isCompleted: false,
+  error: null
+});
+
+/** 加载进度提示文字 */
+const loadingText = ref('正在加载数据...')
+
 /** 初始化页面基础信息 */
-const init = () => {
-pageLoading.value = true
-pageStore.setCurrentPage(config)
-/** 设置API环境*/
-DataSourceUtils.setEnvironments(config.environments)
-pageLoading.value = false
+const init = async () => {
+  pageLoading.value = true
+  dataLoading.value = true
+  
+  // 记录请求开始时间
+  const startTime = new Date().getTime()
+  
+  // 设置页面和环境
+  pageStore.setCurrentPage(config)
+  DataSourceUtils.setEnvironments(config.environments)
+  
+  try {
+    // 注册请求拦截器
+    setupApiInterceptors()
+    
+    // 预加载数据
+    await preloadData()
+    
+    // 确保至少显示5秒的loading画面
+    const currentTime = new Date().getTime()
+    const elapsedTime = currentTime - startTime
+    if (elapsedTime < 5000) {
+      // 等待至少5秒
+      await new Promise(resolve => setTimeout(resolve, 5000 - elapsedTime))
+    }
+    
+    pageLoading.value = false
+    
+    // 页面渲染后，额外等待500ms再隐藏数据加载画面
+    await nextTick()
+    setTimeout(() => {
+      dataLoading.value = false
+    }, 500)
+    
+  } catch (error) {
+    console.error('初始化页面时发生错误:', error)
+    apiRequests.error = error
+    loadingText.value = '加载失败，请刷新页面重试'
+    // 出错后3秒也关闭加载界面
+    setTimeout(() => {
+      pageLoading.value = false
+      dataLoading.value = false
+    }, 3000)
+  }
 }
+
+/** 设置API请求拦截器，用于统计请求数量和进度 */
+const setupApiInterceptors = () => {
+  // 如果项目中使用axios，可以用以下代码统一处理
+  // 这里我们用简单的方法拦截XMLHttpRequest
+  const originalXhrOpen = XMLHttpRequest.prototype.open
+  const originalXhrSend = XMLHttpRequest.prototype.send
+  
+  // 拦截所有XMLHttpRequest请求
+  XMLHttpRequest.prototype.open = function() {
+    const url = arguments[1]
+    // 仅统计API请求
+    if (typeof url === 'string' && url.includes('/api/')) {
+      apiRequests.totalRequests++
+      this.addEventListener('load', function() {
+        apiRequests.completedRequests++
+        apiRequests.progress = Math.floor((apiRequests.completedRequests / apiRequests.totalRequests) * 100)
+        if (apiRequests.completedRequests >= apiRequests.totalRequests) {
+          apiRequests.isCompleted = true
+        }
+      })
+      
+      this.addEventListener('error', function(error) {
+        apiRequests.completedRequests++
+        apiRequests.progress = Math.floor((apiRequests.completedRequests / apiRequests.totalRequests) * 100)
+        console.error('API请求失败:', url, error)
+      })
+    }
+    return originalXhrOpen.apply(this, arguments)
+  }
+  
+  XMLHttpRequest.prototype.send = function() {
+    return originalXhrSend.apply(this, arguments)
+  }
+}
+
+/** 预加载重要数据 */
+const preloadData = async () => {
+  // 这里可以添加一些关键数据的预加载
+  // 例如地图数据、基础配置等
+  return new Promise(resolve => {
+    // 模拟预加载过程
+    setTimeout(() => {
+      resolve(true)
+    }, 200)
+  })
+}
+
+// 监视加载进度变化
+watch(() => apiRequests.progress, (newProgress) => {
+  if (newProgress > 0) {
+    loadingText.value = `数据加载中: ${newProgress}%`
+  }
+})
+
 /** 初始化 */
 onMounted(() => init())
 </script>
 <template>
     <div class="shj-page autoAdapter" ref="pageRef">
-                <div class="shj-page-content" :style="{ transform }" v-if="!pageLoading">
+        <!-- 全屏加载画面 -->
+        <div class="loading-overlay" v-if="pageLoading" :style="{ transform, display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }">
+            <div class="loading-bg"></div>
+            <div class="loading-container">
+                <div class="loader-spinner">
+                    <div class="spinner-ring"></div>
+                </div>
+                <div class="loading-text">{{ loadingText }}</div>
+            </div>
+        </div>
+        
+        <!-- 数据加载中的半透明遮罩 -->
+        <div class="data-loading-overlay" v-if="dataLoading && !pageLoading" :style="{ transform }">
+            <div class="loading-container">
+                <div class="loading-progress">
+                    <div class="progress-bar" :style="{width: apiRequests.progress + '%'}"></div>
+                </div>
+                <div class="loading-text">{{ loadingText }}</div>
+            </div>
+        </div>
+        
+        <div class="shj-page-content" :style="{ transform }" v-if="!pageLoading">
                 <bg-scene></bg-scene>
                 <div class="layer-wrap layer-wrap_opzlMF" id="VRXAR2WwOduBxmaYmrLt">
                     <div class="layer-main">
@@ -1334,4 +1462,99 @@ onMounted(() => init())
 <style lang="scss" scoped>
     @import url(./resources/scss/page.scss);
     @import url(./resources/scss/index.scss);
+
+    /* 加载画面样式 */
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        margin-left: -1280px; /* 宽度的一半，实现水平居中 */
+        width: 2560px;
+        height: 1080px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transform: none !important; /* 确保不受transform影响 */
+    }
+    
+    .loading-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 2560px;
+        height: 1080px;
+        background-image: url('./resources/images/loadingBG.png');
+        background-size: 2560px 1080px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+
+    // .data-loading-overlay {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: rgba(2, 10, 7, 0.7);
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     z-index: 999;
+    //     backdrop-filter: blur(2px);
+    // }
+
+    .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #00ff96;
+    }
+
+    .loader-spinner {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .spinner-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 4px solid rgba(0, 255, 150, 0.2);
+        border-top: 4px solid #00ff96;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+    }
+
+    .loading-text {
+        font-size: 18px;
+        font-weight: 500;
+        text-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+    }
+
+    .loading-progress {
+        width: 300px;
+        height: 6px;
+        background: rgba(0, 255, 150, 0.2);
+        border-radius: 3px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: #00ff96;
+        border-radius: 3px;
+        transition: width 0.3s ease;
+        box-shadow: 0 0 10px #00ff96;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 </style>
