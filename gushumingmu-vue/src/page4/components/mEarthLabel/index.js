@@ -65,7 +65,7 @@ export class App extends Mini3d {
       this.sceneGroup.add(this.labelGroup);
 
       this.initEarth();
-      await this.initEarthPoint();
+      // await this.initEarthPoint();
       this.initRing();
       // this.initGoguang();
       // this.initGoguang2();

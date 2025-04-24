@@ -159,6 +159,7 @@ onMounted(() => init())
         <div class="loading-overlay" v-if="pageLoading">
             <div class="loading-bg"></div>
             <div class="loading-container">
+                <h1 class="loading-title" content="古树名木智慧监测系统">古树名木智慧监测系统</h1>
                 <div class="loader-spinner">
                     <div class="spinner-ring"></div>
                 </div>
@@ -175,7 +176,7 @@ onMounted(() => init())
                 <div class="loading-text">{{ loadingText }}</div>
             </div>
         </div>
-        
+       
         <div class="shj-page-content" :style="{ transform }" v-if="!pageLoading">
                 <bg-scene></bg-scene>
                 <div class="layer-wrap layer-wrap_opzlMF" id="VRXAR2WwOduBxmaYmrLt">
@@ -1512,6 +1513,32 @@ onMounted(() => init())
         justify-content: center;
         color: #00ff96;
     }
+    
+    .loading-title {
+        width: 100%;
+        margin-bottom: 40px;
+        display: flex;
+        font-weight: normal;
+        -webkit-text-stroke: 0px #FFFFFF;
+        background-image: linear-gradient(180deg,#ffffff 32.36150284544728%, #8cf5d5 70.70016099241214%);
+        background-clip: text;
+        color: transparent;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 6px;
+        font-size: 54px;
+        line-height: 2;
+        font-style: normal;
+        justify-content: center;
+        font-family: AlimamaShuHeiTi-Bold;
+    }
+    
+    .loading-title::before {
+        content: attr(content);
+        position: absolute;
+        z-index: -1;
+        text-shadow: 1px 2px 7px #168C69;
+    }
 
     .loader-spinner {
         width: 120px;
@@ -1524,22 +1551,27 @@ onMounted(() => init())
         position: absolute;
         width: 100%;
         height: 100%;
-        border: 4px solid rgba(0, 255, 150, 0.2);
-        border-top: 4px solid #00ff96;
+        border: 4px solid rgba(140, 245, 213, 0.2);
+        border-top: 4px solid #8cf5d5;
         border-radius: 50%;
         animation: spin 1.5s linear infinite;
+        box-shadow: 0 0 15px rgba(22, 140, 105, 0.5);
     }
 
     .loading-text {
         font-size: 18px;
         font-weight: 500;
-        text-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+        background-image: linear-gradient(180deg,#ffffff 32.36150284544728%, #8cf5d5 70.70016099241214%);
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 10px rgba(22, 140, 105, 0.7);
+        font-family: AlimamaShuHeiTi-Bold;
     }
 
     .loading-progress {
         width: 300px;
         height: 6px;
-        background: rgba(0, 255, 150, 0.2);
+        background: rgba(140, 245, 213, 0.2);
         border-radius: 3px;
         margin-bottom: 20px;
         overflow: hidden;
@@ -1547,10 +1579,10 @@ onMounted(() => init())
 
     .progress-bar {
         height: 100%;
-        background: #00ff96;
+        background: #8cf5d5;
         border-radius: 3px;
         transition: width 0.3s ease;
-        box-shadow: 0 0 10px #00ff96;
+        box-shadow: 0 0 10px #168C69;
     }
 
     @keyframes spin {
