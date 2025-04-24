@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="190" viewBox="0 0 160 190">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="210" viewBox="0 0 160 210">
   <!-- 洪涝状态指示器 -->
   <g id="flood-warning">
     
     <!-- 标题 -->
-    <text x="80" y="30" text-anchor="middle" class="subtitle" font-size="16px" fill="#FFFFFF">洪涝预警</text>
+    <text x="80" y="30" text-anchor="middle" class="subtitle" font-size="23px" fill="#FFFFFF">洪涝预警</text>
     
     <!-- 水位线图标 -->
     <g transform="translate(80, 70)">
@@ -14,12 +14,12 @@
     </g>
     
     <!-- 水位状态 -->
-    <text x="80" y="120" text-anchor="middle" class="data-label" font-size="14px" fill="#C7C7C7">当前水位: 正常</text>
-    <text x="80" y="140" text-anchor="middle" class="data-label" font-size="14px" fill="#C7C7C7">预警级别: <tspan fill="#19b558">低</tspan></text>
+    <text x="80" y="120" text-anchor="middle" class="data-label" font-size="18px" fill="#C7C7C7">当前水位: 正常</text>
+    <text x="80" y="145" text-anchor="middle" class="data-label" font-size="18px" fill="#C7C7C7">预警级别: <tspan fill="#19b558">低</tspan></text>
     
     <!-- 应急预案按钮 -->
-    <rect x="20" y="155" width="120" height="25" rx="2" fill="#2A82E421" stroke="#2A82E4" stroke-width="1" />
-    <text x="80" y="172" text-anchor="middle" fill="#FFFFFF" font-size="12px">下载应急预案</text>
+    <rect x="20" y="160" width="120" height="30" rx="2" fill="#2A82E421" stroke="#2A82E4" stroke-width="1" />
+    <text x="80" y="181" text-anchor="middle" fill="#FFFFFF" font-size="15px">下载应急预案</text>
     
   </g>
 </svg>

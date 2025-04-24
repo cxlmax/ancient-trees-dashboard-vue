@@ -1,0 +1,44 @@
+/* 预警面板样式 */
+.layer-wrap.layer-wrap_FloodWarning {
+    width: 160px;
+    height: 190px;
+    transform: matrix(1, 0, 0, 1, 2228.0000, 600.0000);
+    visibility: visible;
+    display: block;
+    z-index: 5;
+    mix-blend-mode: normal;
+    cursor: default;
+
+    .layer-main {
+        transform: rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transform-origin: 50% 50%;
+        animation: 1000.0ms ease 0.0ms normal both running 1.0;
+
+        .layer {
+            pointer-events: all;
+            border-radius: 0px;
+        }
+    }
+}
+
+.layer-wrap.layer-wrap_WindWarning {
+    width: 160px;
+    height: 190px;
+    transform: matrix(1, 0, 0, 1, 1850.0000, 600.0000);
+    visibility: visible;
+    display: block;
+    z-index: 5;
+    mix-blend-mode: normal;
+    cursor: default;
+
+    .layer-main {
+        transform: rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transform-origin: 50% 50%;
+        animation: 1000.0ms ease 0.0ms normal both running 1.0;
+
+        .layer {
+            pointer-events: all;
+            border-radius: 0px;
+        }
+    }
+}

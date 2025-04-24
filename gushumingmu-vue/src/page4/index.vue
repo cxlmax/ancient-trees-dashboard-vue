@@ -152,6 +152,40 @@ onMounted(() => init())
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- 洪水预警面板 -->
+                                    <div class="layer-wrap layer-wrap_FloodWarning" id="flood-warning-panel" style="position: absolute; left: 50px; top: 200px; width: 150px; height: 200px;">
+                                        <div class="layer-main">
+                                            <div class="layer">
+                                                <img src="./resources/images/flood_warning_panel.svg" alt="洪水预警" style="width: 100%; height: 100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 风力预警面板 -->
+                                    <div class="layer-wrap layer-wrap_WindWarning" id="wind-warning-panel" style="position: absolute; left: 220px; top: 200px; width: 150px; height: 200px;">
+                                        <div class="layer-main">
+                                            <div class="layer">
+                                                <img src="./resources/images/wind_warning_panel.svg" alt="风力预警" style="width: 100%; height: 100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 洪水预警面板 -->
+                                    <div class="layer-wrap layer-wrap_FloodWarning" id="flood-warning-panel" style="width: 150px; height: 200px; position: absolute; left: 50px; top: 200px; z-index: 5; visibility: visible; display: block; transform: matrix(1, 0, 0, 1, 2028.0000, 946.0000);">
+                                        <div class="layer-main" style="transform: rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg); transform-origin: 50% 50%; animation: 1000.0ms ease 0.0ms normal both running 1.0;">
+                                            <div class="layer" style="pointer-events: all; border-radius: 0px;">
+                                                <img src="./resources/images/flood_warning_panel.svg" alt="洪水预警" style="width: 100%; height: 100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 风力预警面板 -->
+                                    <div class="layer-wrap layer-wrap_WindWarning" id="wind-warning-panel" style="width: 150px; height: 200px; position: absolute; left: 220px; top: 200px; z-index: 5; visibility: visible; display: block; transform: matrix(1, 0, 0, 1, 2198.0000, 946.0000);">
+                                        <div class="layer-main" style="transform: rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg); transform-origin: 50% 50%; animation: 1000.0ms ease 0.0ms normal both running 1.0;">
+                                            <div class="layer" style="pointer-events: all; border-radius: 0px;">
+                                                <img src="./resources/images/wind_warning_panel.svg" alt="风力预警" style="width: 100%; height: 100%;" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -968,7 +1002,7 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_IutfuO" id="DY4UNE_5zqylDwRCCyzv">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-dSRz" :content="`实时监控`">实时监控</p>
+                                                            <p class="text-dSRz" :content="`风险预警`">风险预警</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1024,7 +1058,7 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_iIPVqY" id="phDvqedmwqXjNUfqVEoS">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-geYG" :content="`风险诊断`">风险诊断</p>
+                                                            <p class="text-geYG" :content="`健康监控`">健康监控</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1242,7 +1276,7 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_mXuYXh" id="_Pjq09Z1Mgrmkd7MtKBE">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-jKlF" :content="`健康诊断`">健康诊断</p>
+                                                            <p class="text-jKlF" :content="`实时监控`">实时监控</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1275,4 +1309,5 @@ onMounted(() => init())
 <style lang="scss" scoped>
 @import url(./resources/scss/page.scss);
 @import url(./resources/scss/index.scss);
+@import url(./resources/scss/warning-panels.scss);
 </style>
