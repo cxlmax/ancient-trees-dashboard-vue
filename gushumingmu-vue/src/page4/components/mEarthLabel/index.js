@@ -17,7 +17,7 @@ import {
 } from "three";
 import * as THREE from "three";
 
-import { Mini3d, Label3d } from "@/mini3d";
+import { Mini3d, Label3d } from "@/page4/mini3d";
 import { geoSphereCoord, generateGrid } from "./utils";
 
 import pointIconBg from "./icon-bg.png";
@@ -44,7 +44,7 @@ export class App extends Mini3d {
     };
     this.camera.instance.position.set(
       -37.761130667160806,
-      125.31600026791556,
+      225.31600026791556,
       -389.90872591076163
     );
 
@@ -63,11 +63,12 @@ export class App extends Mini3d {
       // 标签组
       this.labelGroup = new Group();
       this.sceneGroup.add(this.labelGroup);
+
       this.initEarth();
       await this.initEarthPoint();
       this.initRing();
-      this.initGoguang();
-      this.initGoguang2();
+      // this.initGoguang();
+      // this.initGoguang2();
       // this.initLabel();
       // 射线检测
       this.checkIntersect();
@@ -77,7 +78,8 @@ export class App extends Mini3d {
     });
   }
   initEarth() {
-    let geometry = new SphereGeometry(100, 32, 32);
+
+    let geometry = new SphereGeometry(50, 32, 32);
     let map = this.assets.getResource("earthBlue");
     map.colorSpace = SRGBColorSpace;
     let material = new MeshBasicMaterial({
@@ -117,7 +119,8 @@ export class App extends Mini3d {
               //     // 计算从中间到底部的透明度变化
               //     diffuseColor.a = mix(1.0, 0.0, (middleY - vPosition.y) / middleY);
               // }
-              diffuseColor.a = mix(1.0, 0.0, 1.0-vPosition.y/ 100.0);
+              // diffuseColor.a = mix(1.0, 0.0, 1.0-vPosition.y/ 100.0);
+              diffuseColor.a = 0.0; // 设置为完全透明
               gl_FragColor = vec4( outgoingLight,diffuseColor.a  );
               `
       );
@@ -297,11 +300,12 @@ export class App extends Mini3d {
     this.ringGroup = new Group();
     this.sceneGroup.add(this.ringGroup);
 
-    let geometry = new PlaneGeometry(480, 480);
+    //圆环半径
+    let geometry = new PlaneGeometry(300, 300);
     // 圆环1
     let ring01 = this.assets.getResource("ring01");
     let ring01Material = new MeshBasicMaterial({
-      color: 0x12457a,
+      color: 0x1DAB7E,
       side: DoubleSide,
       map: ring01,
       fog: true,
@@ -315,7 +319,7 @@ export class App extends Mini3d {
     // 圆环2
     let ring02 = this.assets.getResource("ring02");
     let ring02Material = new MeshBasicMaterial({
-      color: 0x0b4974,
+      color: 0x1DAB7E,
       side: DoubleSide,
       map: ring02,
       fog: true,
@@ -331,7 +335,7 @@ export class App extends Mini3d {
     // 圆环3
     let ring03 = this.assets.getResource("ring03");
     let ring03Material = new MeshBasicMaterial({
-      color: 0x12457a,
+      color: 0x1DAB7E,
       side: DoubleSide,
       map: ring03,
       fog: true,
@@ -368,7 +372,7 @@ export class App extends Mini3d {
   }
 
   initLabel(labelArr=[]) {
-    const radius = 200; // 半径200
+    const radius = 130; // 半径200
     
     const count = labelArr.length; // 统计数量
     this.label3d = new Label3d(this);
@@ -442,20 +446,37 @@ export class App extends Mini3d {
     });
   }
   async initEarthPoint() {
-    // 获取json文件
-    let geoJson = await this.requestData(import.meta.env.BASE_URL+"/assets/json/world.json");
-    // 转换数据
-    let worldData = this.transfromGeoJSON(geoJson);
-    // 生成地球点
-    let points = this.earthPoints(worldData);
-    this.sceneGroup.add(points);
-    this.time.on("tick", (delta, elapsedTime) => {
-      points.rotation.y += delta * 0.05;
-    });
+    try {
+      // 获取json文件
+      let geoJson = await this.requestData(import.meta.env.BASE_URL+"/assets/json/world.json");
+      
+      // 检查是否成功获取数据
+      if (!geoJson) {
+        console.error('无法加载 GeoJSON 数据');
+        return;
+      }
+      
+      // 转换数据
+      let worldData = this.transfromGeoJSON(geoJson);
+      
+      // 生成地球点
+      let points = this.earthPoints(worldData);
+      this.sceneGroup.add(points);
+      this.time.on("tick", (delta, elapsedTime) => {
+        points.rotation.y += delta * 0.05;
+      });
+    } catch (error) {
+      console.error('初始化地球点时出错:', error);
+    }
   }
   // 请求文件
   async requestData(url) {
     try {
+      if (!url) {
+        console.error('请求URL不能为空');
+        return null;
+      }
+      
       // 文件加载器
       const loader = new FileLoader();
       // 请求数据
@@ -464,22 +485,42 @@ export class App extends Mini3d {
         let progress = ((loaded / total) * 100).toFixed(0);
         // console.log("file progress", progress);
       });
-      // 数据转换-字符转为json
-      data = JSON.parse(data);
-
-      return data;
+      
+      // 检查数据是否为空
+      if (!data) {
+        console.error('从 URL 获取的数据为空:', url);
+        return null;
+      }
+      
+      try {
+        // 数据转换-字符转为json
+        data = JSON.parse(data);
+        return data;
+      } catch (parseError) {
+        console.error('无法解析JSON数据:', parseError);
+        return null;
+      }
     } catch (error) {
-      console.log(error);
+      console.error('请求数据时出错:', error);
+      return null;
     }
   }
   // 转换数据
   transfromGeoJSON(worldData) {
+    if (!worldData || !worldData.features) {
+      console.error('无效的 GeoJSON 数据:', worldData);
+      return { features: [] }; // 返回一个包含空 features 数组的对象
+    }
+    
     let features = worldData.features;
     for (let i = 0; i < features.length; i++) {
       const element = features[i];
-      // 将Polygon处理跟MultiPolygon一样的数据结构
-      if (element.geometry.type === "Polygon") {
-        element.geometry.coordinates = [element.geometry.coordinates];
+      // 检查 element 和 geometry 是否存在
+      if (element && element.geometry && element.geometry.type) {
+        // 将Polygon处理跟MultiPolygon一样的数据结构
+        if (element.geometry.type === "Polygon") {
+          element.geometry.coordinates = [element.geometry.coordinates];
+        }
       }
     }
     return worldData;
@@ -544,7 +585,8 @@ export class App extends Mini3d {
               diffuseColor.a = 1.0;
               // 计算透明度
              
-              diffuseColor.a = mix(1.0, 0.0, 1.0-vPosition.y/ 130.0);
+              // diffuseColor.a = mix(1.0, 0.0, 1.0-vPosition.y/ 130.0);
+              diffuseColor.a = 0.0;
               gl_FragColor = vec4( outgoingLight,diffuseColor.a  );
               `
       );

@@ -1,4 +1,4 @@
-import { Resource } from "@/mini3d";
+import { Resource } from "@/page4/mini3d";
 import { FileLoader } from "three"
 import earthBlue from "./earth-blue.png"
 import ring01 from "./ring01.png"

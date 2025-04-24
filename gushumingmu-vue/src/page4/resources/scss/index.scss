@@ -42,12 +42,12 @@
 // 页面所有元素的独立样式
 
         .layer-wrap.layer-wrap_xPvNqU {
-            width: 1105px;
+            width: 1505px;
             height: 900px;
-            transform: matrix(1, 0, 0, 1, 683.0000,  80.0000);
+            transform: matrix(1, 0, 0, 1, 523.0000,  80.0000);
             visibility: visible;
             display: block;
-            z-index: 5;
+            z-index: 0;
             mix-blend-mode: normal;
             cursor: default;
             .layer-main {
@@ -142,7 +142,7 @@
             transform: matrix(1, 0, 0, 1, 971.0000,  6.0000);
             visibility: visible;
             display: block;
-            z-index: 100;
+            z-index: 7;
             mix-blend-mode: normal;
             cursor: default;
             .layer-main {

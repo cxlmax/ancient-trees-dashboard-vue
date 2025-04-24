@@ -33,8 +33,16 @@
 	"meshs": {
 		"isCasterShadow": true,
 		"position": [0, 0, 0],
+		"scaling": [3, 3, 3],
 		"type": "glb",
-		"url": "/web/3ds/最终-20250423132909170.glb"
+		"url": "/web/3ds/最终-20250423132909170.glb",
+		"materialOptions": {
+			"alpha": 0.3,
+			"hasAlpha": true,
+			"transparencyMode": 2,
+			"emissiveColor": "#00FFFF",
+			"emissiveIntensity": 0.3
+		}
 	},
 	"pipelineOption": {
 		"chromaticAberrationDirection": 4.8,
@@ -67,11 +75,11 @@
 	"camera": {
 		"autoRotation": true,
 		"wheelDeltaPercentage": 0.010000000000000009,
-		"alpha": 66,
-		"upperRadiusLimit": 20,
-		"radius": 0,
-		"lowerRadiusLimit": 1,
-		"beta": 66,
+		"alpha": 45,
+		"upperRadiusLimit": 30,
+		"radius": 5,
+		"lowerRadiusLimit": 2,
+		"beta": 160,
 		"panningSensibility": 0.01
 	},
 	"animationGroups": [],

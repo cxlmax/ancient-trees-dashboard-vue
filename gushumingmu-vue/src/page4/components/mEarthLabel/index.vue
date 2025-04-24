@@ -1,11 +1,7 @@
 <template>
   <div class="earth-label">
     <canvas id="earth-label"></canvas>
-    <div class="total-indicator">
-      <img class="total-indicator-icon" src="./icon-total.png" alt="" />
-      <div class="total-indicator-label">总产值(亿元)</div>
-      <div class="total-indicator-value">38374</div>
-    </div>
+
   </div>
 </template>
 
@@ -20,33 +16,33 @@ let app = null;
 const labelArr = [
   {
     icon: pointIcon,
-    name: "指标一",
-    value: 1234,
-    unit: "亿",
+    name: "树龄",
+    value: 516,
+    unit: "年",
   },
   {
     icon: pointIcon2,
-    name: "指标二",
-    value: 7674,
-    unit: "单位",
+    name: "保护级别",
+    value: 1,
+    unit: "级",
   },
   {
     icon: pointIcon,
-    name: "指标三",
-    value: 8753,
-    unit: "亿元",
+    name: "树高",
+    value: 9,
+    unit: "米",
   },
   {
     icon: pointIcon2,
-    name: "指标四",
-    value: 98754,
-    unit: "吨",
+    name: "胸径",
+    value: 106,
+    unit: "厘米",
   },
   {
     icon: pointIcon3,
-    name: "指标五",
-    value: 8755,
-    unit: "亿元",
+    name: "平均冠幅",
+    value: 8,
+    unit: "米",
   },
 ];
 onMounted(() => {
@@ -102,7 +98,7 @@ onBeforeUnmount(() => {
     &-value {
       font-size: 14px;
       font-family: Roboto, Arial, Helvetica, sans-serif;
-      color: #afe8ff;
+      color: #afffc3;
       font-weight: bold;
       margin-bottom: 60px;
     }
