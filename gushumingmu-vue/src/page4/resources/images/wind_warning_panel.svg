@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="190" viewBox="0 0 160 190">
+  <!-- 强风状态指示器 -->
+  <g id="wind-warning">
+    
+    <!-- 标题 -->
+    <text x="80" y="30" text-anchor="middle" class="subtitle" font-size="16px" fill="#FFFFFF">强风预警</text>
+    
+    <!-- 风力等级图标 -->
+    <g transform="translate(80, 70)">
+      <!-- wind.svg图标 -->
+      <g transform="translate(-20, -20)">
+        <path d="M48.7,35.8L34,26c-0.2-1.7-1.1-3.2-2.3-4.2c2.6-3.4,3.7-6.8,3.2-9.9c-0.7-4.4-4.2-7.2-6.2-8.5c-0.6-0.4-1.5-0.4-2.1-0.1  c-0.7,0.4-1.1,1.1-1.1,1.8v15.8c-2.3,0.9-4,3.2-4,5.9c0,0.3,0,0.5,0,0.7c-5.4-0.3-9.5,0.8-12.1,3.4c-3.3,3.3-3.3,8-3,10.5  c0.1,0.8,0.6,1.4,1.3,1.7c0.3,0.1,0.5,0.2,0.8,0.2c0.5,0,0.9-0.2,1.3-0.5l13.7-11.2V52c0,0.6,0.4,1,1,1H31c0.6,0,1-0.4,1-1V33.2  c1.4,3.2,3.4,5.5,5.9,6.7c1.5,0.7,3,1,4.4,1c2.5,0,4.8-0.8,6.2-1.4c0.7-0.3,1.2-1,1.2-1.7C49.7,36.9,49.4,36.2,48.7,35.8z M27.5,5  c0.1,0,0.1,0,0.1,0c1.8,1.1,4.8,3.6,5.3,7.2c0.4,2.7-0.6,5.6-3,8.6c-0.7-0.3-1.4-0.4-2.2-0.4c-0.1,0-0.2,0-0.3,0L27.5,5z M27.7,22.4  c2.4,0,4.3,1.9,4.3,4.3S30.1,31,27.7,31s-4.3-1.9-4.3-4.3S25.4,22.4,27.7,22.4z M8.6,41.3c0,0-0.1,0-0.2-0.1  C8.2,39,8.2,35,10.8,32.3c1.9-1.9,4.9-2.9,8.9-2.9c0.8,0,1.5,0,2.4,0.1c0.1,0.2,0.2,0.3,0.3,0.5L8.6,41.3z M25.5,51V32.6  c0.7,0.3,1.4,0.4,2.2,0.4c0.8,0,1.5-0.1,2.2-0.4V51H25.5z M47.6,37.6c-1.9,0.8-5.7,2-9,0.5c-2.5-1.2-4.5-3.8-5.7-7.8  c0.4-0.6,0.7-1.2,0.9-2l13.8,9.1C47.6,37.4,47.7,37.5,47.6,37.6z" fill="#1EE7E7" transform="scale(0.7)"/>
+      </g>
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#1EE7E7" stroke-width="1" stroke-dasharray="5,3" class="rotate" />
+    </g>
+    
+    <!-- 风力等级 -->
+    <text x="80" y="120" text-anchor="middle" class="data-label" font-size="14px" fill="#C7C7C7">当前风力: 3级</text>
+    <text x="80" y="140" text-anchor="middle" class="data-label" font-size="14px" fill="#C7C7C7">预警级别: <tspan fill="#19b558">低</tspan></text>
+    
+    <!-- 应对措施按钮 -->
+    <rect x="20" y="155" width="120" height="25" rx="2" fill="#1DAB7E21" stroke="#1DAB7E" stroke-width="1" class="pulse" />
+    <text x="80" y="172" text-anchor="middle" fill="#FFFFFF" font-size="12px">查看应对措施</text>
+  </g>
+  
+  <!-- 应对措施折叠面板 (初始隐藏) -->
+  <g id="measures-panel" opacity="0" class="fade-in">
+    <rect x="0" y="0" width="344" height="170" rx="5" fill="#181919" stroke="#01FCE3" stroke-width="1" filter="url(#cardShadow)" />
+    
+    <!-- 标题 -->
+    <text x="20" y="30" class="subtitle" font-size="16px" fill="#FFFFFF">强风应对措施</text>
+    <line x1="20" y1="45" x2="324" y2="45" stroke="#3D3D3D" stroke-width="1" />
+    
+    <!-- 流程图 -->
+    <g transform="translate(30, 60)">
+      <!-- 步骤1 -->
+      <rect x="0" y="0" width="80" height="30" rx="2" fill="#1DAB7E21" stroke="#1DAB7E" stroke-width="1" />
+      <text x="40" y="20" text-anchor="middle" fill="#FFFFFF" font-size="12px">检查支撑</text>
+      
+      <!-- 箭头 -->
+      <line x1="80" y1="15" x2="100" y2="15" stroke="#FFFFFF" stroke-width="1" />
+      <polygon points="100,15 95,12 95,18" fill="#FFFFFF" />
+      
+      <!-- 步骤2 -->
+      <rect x="100" y="0" width="80" height="30" rx="2" fill="#1DAB7E21" stroke="#1DAB7E" stroke-width="1" />
+      <text x="140" y="20" text-anchor="middle" fill="#FFFFFF" font-size="12px">加固树干</text>
+      
+      <!-- 箭头 -->
+      <line x1="180" y1="15" x2="200" y2="15" stroke="#FFFFFF" stroke-width="1" />
+      <polygon points="200,15 195,12 195,18" fill="#FFFFFF" />
+      
+      <!-- 步骤3 -->
+      <rect x="200" y="0" width="80" height="30" rx="2" fill="#1DAB7E21" stroke="#1DAB7E" stroke-width="1" />
+      <text x="240" y="20" text-anchor="middle" fill="#FFFFFF" font-size="12px">监测倾角</text>
+      
+      <!-- 步骤4 -->
+      <rect x="50" y="60" width="80" height="30" rx="2" fill="#1DAB7E21" stroke="#1DAB7E" stroke-width="1" />
+      <text x="90" y="80" text-anchor="middle" fill="#FFFFFF" font-size="12px">记录数据</text>
+      
+      <!-- 箭头 -->
+      <line x1="240" y1="30" x2="240" y2="45" stroke="#FFFFFF" stroke-width="1" />
+      <line x1="240" y1="45" x2="90" y2="45" stroke="#FFFFFF" stroke-width="1" />
+      <line x1="90" y1="45" x2="90" y2="60" stroke="#FFFFFF" stroke-width="1" />
+      <polygon points="90,60 87,55 93,55" fill="#FFFFFF" />
+      
+      <!-- 步骤5 -->
+      <rect x="150" y="60" width="80" height="30" rx="2" fill="#1DAB7E21" stroke="#1DAB7E" stroke-width="1" />
+      <text x="190" y="80" text-anchor="middle" fill="#FFFFFF" font-size="12px">上报情况</text>
+      
+      <!-- 箭头 -->
+      <line x1="130" y1="75" x2="150" y2="75" stroke="#FFFFFF" stroke-width="1" />
+      <polygon points="150,75 145,72 145,78" fill="#FFFFFF" />
+    </g>
+    
+    <!-- 关闭按钮 -->
+    <circle cx="324" cy="30" r="10" fill="#3D3D3D" />
+    <line x1="320" y1="26" x2="328" y2="34" stroke="#FFFFFF" stroke-width="1.5" />
+    <line x1="328" y1="26" x2="320" y2="34" stroke="#FFFFFF" stroke-width="1.5" />
+  </g>
+</svg>

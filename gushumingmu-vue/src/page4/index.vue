@@ -22,7 +22,7 @@ import ZvTextOverNumberRwqE from './components/zv-text-over-number-RwqE/index.vu
 import ZvTextOverNumberbcyr from './components/zv-text-over-number-bcyr/index.vue'
 import ZvTextOverNumberPTpy from './components/zv-text-over-number-PTpy/index.vue'
 import ZvTextOverNumberBUAB from './components/zv-text-over-number-BUAB/index.vue'
-
+import ZvMediaVideoDynamicmGbP from './components/zv-media-video-dynamic-mGbP/index.vue'
 
 
 
@@ -946,6 +946,10 @@ onMounted(() => init())
                             <div class="layer-main">
                                 <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -1978, -746)` }">
 
+
+
+
+
                                     <div class="layer-wrap layer-wrap_oEaHTz" id="hUak570G3YMVTbwDy7qk">
                                         <div class="layer-main">
                                             <div class="layer">
@@ -1218,20 +1222,42 @@ onMounted(() => init())
                             <div class="layer-main">
                                 <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -53, -598)` }">
 
-                                    <div class="layer-wrap layer-wrap_uOqzQU" id="mbYo43ldG5PYmmL5cjep">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <ZvTextTextDynamicvOdx />
-                                            </div>
-                                        </div>
+                                  <div class="layer-wrap layer-wrap_HkLaUS" id="FZuggzTs_LNY3g3FCnKC">
+                                    <div class="layer-main">
+                                      <div class="layer">
+                                        <p class="text-yWwm">纬度：103.65422</p>
+                                      </div>
                                     </div>
-                                    <div class="layer-wrap layer-wrap_VQkIHO" id="G-IWQM4bUVT6DH7eiG1c">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <ZvChartOtherRadarAyVL />
-                                            </div>
-                                        </div>
+                                  </div>
+                                  <div class="layer-wrap layer-wrap_bPlUyX" id="lrN06p6VJh4PmUTOxvH4">
+                                    <div class="layer-main">
+                                      <div class="layer">
+                                        <p class="text-oBrJ">经度：113.15554</p>
+                                      </div>
                                     </div>
+                                  </div>
+                                  <div class="layer-wrap layer-wrap_EFIuSO" id="xewF74TR6-gXI-mpXkd4">
+                                    <div class="layer-main">
+                                      <div class="layer">
+                                        <p class="text-LsSq">位置：长沙市11号</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="layer-wrap layer-wrap_cNcgsD" id="K2K9PAW7rhQulCP1S7jb">
+                                    <div class="layer-main">
+                                      <div class="layer">
+                                        <p class="text-hWmo">设备编号：S24563</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="layer-wrap layer-wrap_brceKD" id="hUak570G3YMVTbwDy7qk">
+                                    <div class="layer-main">
+                                      <div class="layer">
+                                        <ZvMediaVideoDynamicmGbP />
+                                      </div>
+                                    </div>
+                                  </div>
+
                                     <div class="layer-wrap layer-wrap_YrpofU" id="b2zVJKrUi9X7bjKg5c-g">
                                         <div class="layer-main">
                                             <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -53, -747)` }">
