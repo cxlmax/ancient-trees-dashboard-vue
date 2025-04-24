@@ -945,46 +945,6 @@ onMounted(() => init())
                         <div class="layer-wrap layer-wrap_ohsNCZ" id="93NRD1Nm6-DjDX6NzTEs">
                             <div class="layer-main">
                                 <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -1978, -746)` }">
-
-
-
-
-
-                                    <div class="layer-wrap layer-wrap_oEaHTz" id="hUak570G3YMVTbwDy7qk">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <ZvMediaVideoDynamicUelC />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="layer-wrap layer-wrap_fsPqXI" id="K2K9PAW7rhQulCP1S7jb">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <p class="text-EnFX">设备编号：S24563</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="layer-wrap layer-wrap_wPgykG" id="xewF74TR6-gXI-mpXkd4">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <p class="text-hXny">位置：长沙市11号</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="layer-wrap layer-wrap_MddNxU" id="lrN06p6VJh4PmUTOxvH4">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <p class="text-fDYo">经度：113.15554</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="layer-wrap layer-wrap_DMWDnN" id="FZuggzTs_LNY3g3FCnKC">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <p class="text-ptgU">纬度：103.65422</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="layer-wrap layer-wrap_BuQGef" id="9L_Il-gL0C52OGPH_Loy">
                                         <div class="layer-main">
                                             <div class="group"
@@ -1015,6 +975,8 @@ onMounted(() => init())
                                             </div>
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
