@@ -30,6 +30,118 @@ const cityLevelBackgroundImg = {
   alphaMap: "http://qiniu.zhouchuanbaofu.cn/black.png"
 };
 
+// 保存原始的边框动画设置
+const originalFloorSettings = {
+  quan: {
+    color: "#007BFF",
+    show: true
+  },
+  gaoguang: {
+    color: "#394D41",
+    show: true
+  },
+  gridRipple: {
+    diffuseWidth: 20,
+    color: "#566A78",
+    diffuseOpacity: 0.7,
+    alphaMap: "/web/map3d/gridRippleAlphaMap.png",
+    repeat: 100,
+    show: true,
+    diffuseSpeed: 20,
+    diffuseColor: "#566A78",
+    opacity: 0.2,
+    map: "/web/map3d/gridRippleMap.png"
+  },
+  rotateBorder: {
+    rotateBorder1: {
+      size: 1.18,
+      color: "#445057",
+      texture: "/web/map3d/rotateBorder1Map.png",
+      show: true,
+      rotateSpeed: 1.5,
+      opacity: 0.5
+    },
+    rotateBorder2: {
+      size: 1.12,
+      color: "#445057",
+      texture: "/web/map3d/rotateBorder2Map.png",
+      show: true,
+      rotateSpeed: -4,
+      opacity: 0.6
+    }
+  }
+};
+
+// 下钻后的增强动画设置
+const enhancedFloorSettings = {
+  quan: {
+    color: "#007BFF", // 保持原来的颜色
+    show: true
+  },
+  gaoguang: {
+    color: "#394D41", // 保持原来的颜色
+    show: true
+  },
+  gridRipple: {
+    diffuseWidth: 30, // 增大扩散宽度
+    color: "#566A78", // 保持原来的颜色
+    diffuseOpacity: 0.9, // 增强透明度
+    alphaMap: "/web/map3d/gridRippleAlphaMap.png",
+    repeat: 120, // 增大重复次数
+    show: true,
+    diffuseSpeed: 30, // 增快扩散速度
+    diffuseColor: "#566A78", // 保持原来的颜色
+    opacity: 0.4, // 增强透明度
+    map: "/web/map3d/gridRippleMap.png"
+  },
+  rotateBorder: {
+    rotateBorder1: {
+      size: 1.25, // 增大尺寸
+      color: "#445057", // 保持原来的颜色
+      texture: "/web/map3d/rotateBorder1Map.png",
+      show: true,
+      rotateSpeed: 2.5, // 增快旋转速度
+      opacity: 0.7 // 增强透明度
+    },
+    rotateBorder2: {
+      size: 1.2, // 增大尺寸
+      color: "#445057", // 保持原来的颜色
+      texture: "/web/map3d/rotateBorder2Map.png",
+      show: true,
+      rotateSpeed: -5, // 增快旋转速度
+      opacity: 0.8 // 增强透明度
+    }
+  }
+};
+
+// 保存原始的粒子动画设置
+const originalParticleSettings = {
+  material: {
+    size: 10,
+    color: "#FFFFFF",
+    opacity: 0.3
+  },
+  num: 20,
+  show: true,
+  range: 200,
+  dir: "up",
+  speed: 0.1
+};
+
+// 下钻后的增强粒子动画设置
+const enhancedParticleSettings = {
+  material: {
+    size: 12, // 增大粒子尺寸
+    color: "#FFFFFF", // 保持原来的颜色
+    opacity: 0.5 // 增强透明度
+  },
+  num: 40, // 增加粒子数量
+  show: true,
+  range: 250, // 增大粒子范围
+  dir: "up",
+  speed: 0.15 // 增快粒子速度
+};
+
 // 省级下钻后的市级数据
 const cityData = {
   '430000': [ // 湖南省
@@ -118,16 +230,24 @@ const handleMapDrilling = (e) => {
   
   console.log('地图下钻事件触发:', adcode, level);
   
-  // 当进入省级或以下级别时，更换背景图片
+  // 当进入省级或以下级别时，更换背景图片和动画效果
   if (level === 'province' || level === 'city' || level === 'county') {
-    // 创建新的sceneOption对象，更新背景图片
+    // 创建新的sceneOption对象，更新背景图片和动画效果
     const newSceneOption = JSON.parse(JSON.stringify(sceneOption));
+    
+    // 更新背景图片
     newSceneOption.map.backgroundImg.src = cityLevelBackgroundImg.src;
     newSceneOption.map.backgroundImg.alphaMap = cityLevelBackgroundImg.alphaMap;
     
+    // 增强边框动画效果
+    newSceneOption.floor = enhancedFloorSettings;
+    
+    // 增强粒子动画效果
+    newSceneOption.particle = enhancedParticleSettings;
+    
     // 更新sceneOption引用
     Object.assign(sceneOption, newSceneOption);
-    console.log('已更换为市级/县级背景图片');
+    console.log('已更换为下钻后的增强动画效果');
   }
   
   // 根据下钻的行政区划代码和级别更新柱体数据
@@ -206,16 +326,24 @@ const handleMapBack = (e) => {
   
   console.log('地图返回事件触发:', adcode, level);
   
-  // 当返回到国家级别时，恢复原始背景图片
+  // 当返回到国家级别时，恢复原始背景图片和动画效果
   if (level === 'country') {
-    // 创建新的sceneOption对象，恢复原始背景图片
+    // 创建新的sceneOption对象，恢复原始背景图片和动画效果
     const newSceneOption = JSON.parse(JSON.stringify(sceneOption));
+    
+    // 恢复原始背景图片
     newSceneOption.map.backgroundImg.src = originalBackgroundImg.src;
     newSceneOption.map.backgroundImg.alphaMap = originalBackgroundImg.alphaMap;
     
+    // 恢复原始边框动画效果
+    newSceneOption.floor = originalFloorSettings;
+    
+    // 恢复原始粒子动画效果
+    newSceneOption.particle = originalParticleSettings;
+    
     // 更新sceneOption引用
     Object.assign(sceneOption, newSceneOption);
-    console.log('已恢复国家级别背景图片');
+    console.log('已恢复国家级别背景图片和动画效果');
   }
   
   // 根据返回后的级别更新柱体数据
