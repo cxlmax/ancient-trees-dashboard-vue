@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("../../../utils/componentRefs.js"),n=(r,c)=>{try{const{updateWidget:t}=r;if(t.targetLayerId){const e=o.ComponentRefs.getComponentRef(t.targetLayerId);e&&e.ref&&e.ref.refresh&&e.ref.refresh()}}catch{}};exports.executeUpdateWidgetAction=n;

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const c=require("../../../utils/componentRefs.js"),r=(n,o)=>{try{const{invokeAction:e}=n,t=c.ComponentRefs.getComponentRef(e.targetLayerId);t&&t.ref[e.functionName](e.functionArgs,o)}catch{}};exports.executeInvokeAction=r;

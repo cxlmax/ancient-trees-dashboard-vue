@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("vue"),c=(e,t)=>{u.watch(()=>e.sources,()=>{e.sources&&e.sources.length>0&&t(e.option)},{deep:!0})};exports.useButtonWatch=c;

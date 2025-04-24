@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("lodash"),a=(e,o)=>{const t=s.cloneDeep(o);return e&&s.isArray(e)&&e.forEach((i,r)=>{e[r]?t.series[r].data=e[r].data:t.series[r].data=[]}),t};exports.parseOtherData=a;

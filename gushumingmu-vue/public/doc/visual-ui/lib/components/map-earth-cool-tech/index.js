@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./index.vue.js"),l=require("../../commons/utils/install.js"),e=l.withInstall(t.default);exports.ZvMapEarthCoolTech=e;exports.default=e;

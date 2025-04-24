@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("../../datasource/index.js"),a=(t,r)=>{const{sendAPIAction:e}=t;e.useDataSource&&s.SHJDatasourceV2.parse({sources:[e.useDataSource],callback:()=>{},isStore:!1,noUseMapping:!0,tId:"",isInterval:!1})};exports.executeSendApiAction=a;

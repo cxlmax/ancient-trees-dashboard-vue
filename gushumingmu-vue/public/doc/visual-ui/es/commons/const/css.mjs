@@ -1,0 +1,80 @@
+const t = [
+  // 尺寸相关
+  "width",
+  "height",
+  "minWidth",
+  "minHeight",
+  "maxWidth",
+  "maxHeight",
+  // 边距相关
+  "margin",
+  "marginTop",
+  "marginRight",
+  "marginBottom",
+  "marginLeft",
+  "padding",
+  "paddingTop",
+  "paddingRight",
+  "paddingBottom",
+  "paddingLeft",
+  // 边框相关
+  "borderWidth",
+  "borderTopWidth",
+  "borderRightWidth",
+  "borderBottomWidth",
+  "borderLeftWidth",
+  "borderRadius",
+  "borderTopLeftRadius",
+  "borderTopRightRadius",
+  "borderBottomLeftRadius",
+  "borderBottomRightRadius",
+  // 字体相关
+  "fontSize",
+  "lineHeight",
+  "letterSpacing",
+  "wordSpacing",
+  "textIndent",
+  // 定位相关
+  "top",
+  "right",
+  "bottom",
+  "left",
+  // 布局相关
+  "gap",
+  "gridGap",
+  "columnGap",
+  "rowGap",
+  // 其他
+  "outlineWidth",
+  "outlineOffset",
+  "strokeWidth",
+  "-webkit-text-stroke-width",
+  "textShadow",
+  "boxShadow",
+  "transform",
+  "perspective",
+  "backdropFilter",
+  "filter",
+  "clipPath",
+  "maskSize",
+  "maskPosition",
+  "maskBorderWidth",
+  "scrollbarWidth",
+  "scrollbarGutter",
+  "scrollMargin",
+  "scrollPadding",
+  "tabSize",
+  "textDecorationThickness",
+  "textUnderlineOffset",
+  // 背景相关
+  "backgroundPositionX",
+  "backgroundPositionY",
+  // 拓展
+  "value",
+  "x",
+  "y",
+  "inputHeight"
+];
+export {
+  t as PX_PROPERTIES
+};

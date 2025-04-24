@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const l=require("./index.vue.js"),s=require("../../commons/utils/install.js"),e=s.withInstall(l.default);exports.ZvGraphicalIsoscelesTriangle=e;exports.default=e;

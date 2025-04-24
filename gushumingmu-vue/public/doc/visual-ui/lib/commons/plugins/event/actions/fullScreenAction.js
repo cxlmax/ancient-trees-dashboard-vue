@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("@vueuse/core"),{enter:c,exit:n,toggle:u}=s.useFullscreen(),l=(t,o)=>{const{fullscreenAction:e}=t;e&&e.status&&(e.status==="fullscreen"&&c(),e.status==="window"&&n(),e.status==="toggle"&&u())};exports.executeFullScreenAction=l;

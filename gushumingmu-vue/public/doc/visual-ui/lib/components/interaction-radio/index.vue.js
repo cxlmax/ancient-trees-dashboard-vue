@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("vue"),t={class:"zerov-widget"},o=e.defineComponent({name:"zv-interaction-radio"}),n=e.defineComponent({...o,props:{basicOption:{}},setup(r){return(c,i)=>(e.openBlock(),e.createElementBlock("div",t))}});exports.default=n;

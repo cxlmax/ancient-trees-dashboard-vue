@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./index.vue.js"),s=require("../../commons/utils/install.js"),e=s.withInstall(t.default);exports.ZvCommonsEcharts=e;exports.default=e;

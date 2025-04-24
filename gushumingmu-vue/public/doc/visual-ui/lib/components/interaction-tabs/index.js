@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./index.vue.js"),n=require("../../commons/utils/install.js"),e=n.withInstall(t.default);exports.ZvInteractionTabs=e;exports.default=e;

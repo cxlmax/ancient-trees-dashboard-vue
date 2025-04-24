@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("lodash"),o=(r,c)=>{const t=[];return e.isArray(r)&&r.forEach(s=>{e.isArray(s.data)&&s.data.forEach(a=>{t.push([a.x,a.y,a.value])})}),{source:t}};exports.parseScatterData=o;

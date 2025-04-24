@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./index.vue.js"),a=require("../../commons/utils/install.js"),e=a.withInstall(t.default);exports.ZvMediaIframe=e;exports.default=e;

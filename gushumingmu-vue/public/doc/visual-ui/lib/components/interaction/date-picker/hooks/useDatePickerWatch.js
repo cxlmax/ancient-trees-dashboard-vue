@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("vue"),u=require("lodash"),r=(e,c,o)=>{t.watch(()=>e.sources,()=>{e.sources&&e.sources.length>0&&c(e.option)},{deep:!0}),t.watch(()=>u.cloneDeep(e.option),(i,n)=>{o()},{deep:!0})};exports.useDatePickerWatch=r;

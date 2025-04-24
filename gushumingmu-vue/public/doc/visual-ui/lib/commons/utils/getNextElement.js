@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=(e,t)=>{if(!Array.isArray(e)||!e.length||typeof t!="string")return null;const n=e.indexOf(t);if(n===-1)return null;const l=(n+1)%e.length;return e[l]};exports.getNextElement=i;

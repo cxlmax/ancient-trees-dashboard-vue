@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const c={beforeMount(e,i){e.clickOutsideEvent=t=>{e===t.target||e.contains(t.target)||i.value(t)},document.addEventListener("click",e.clickOutsideEvent)},unmounted(e){document.removeEventListener("click",e.clickOutsideEvent)}};exports.default=c;

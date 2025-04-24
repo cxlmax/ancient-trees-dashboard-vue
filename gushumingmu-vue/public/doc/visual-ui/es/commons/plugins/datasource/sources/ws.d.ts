@@ -1,0 +1,32 @@
+declare type WsCallback = (data: any) => void;
+declare type WsEventCallback = (event: string, data?: any) => void;
+export declare class WebSocketInstance {
+    private source;
+    private id;
+    private noUseMapping;
+    private tId;
+    private onData?;
+    private onEvent?;
+    private ws;
+    private reconnectAttempts;
+    private timeoutTimer?;
+    private isDisconnecting;
+    private config;
+    constructor(source: any, id: string, noUseMapping: boolean, tId: string, onData?: WsCallback, onEvent?: WsEventCallback);
+    getId(): string;
+    isConnected(): boolean;
+    private processProtocols;
+    private injectHeadersToUrl;
+    private connect;
+    private handleOpen;
+    private handleMessage;
+    private handleError;
+    private handleClose;
+    private shouldReconnect;
+    private scheduleReconnect;
+    send(data: string | object): void;
+    disconnect(): void;
+    getWebSocket(): WebSocket;
+}
+export declare const parseWebSocket: (source: any, id: string, noUseMapping: boolean, tId: string, onData?: WsCallback, onEvent?: WsEventCallback) => WebSocketInstance;
+export {};

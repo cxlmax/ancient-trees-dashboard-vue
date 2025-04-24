@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=e=>new Promise((r,o)=>{const s=new Image;s.onload=()=>{r(!0)},s.onerror=t=>{o(t)},s.src=e}),a=e=>{const r=[];return e.forEach(o=>{r.push(n(o))}),Promise.all(r)};exports.imgsPreloader=a;

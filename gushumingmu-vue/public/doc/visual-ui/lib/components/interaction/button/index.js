@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("./index.vue.js"),n=require("../../../commons/utils/install.js"),t=n.withInstall(e.default);exports.ShjInteractionButton=t;exports.default=t;

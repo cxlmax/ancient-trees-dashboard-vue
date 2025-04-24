@@ -1,0 +1,28 @@
+class c {
+  constructor() {
+    this.events = /* @__PURE__ */ new Map();
+  }
+  on(t, s) {
+    let e = this.events.get(t);
+    e || (e = /* @__PURE__ */ new Set(), this.events.set(t, e)), e.add(s);
+  }
+  off(t, s) {
+    const e = this.events.get(t);
+    e && (s ? e.delete(s) : this.events.delete(t));
+  }
+  emit(t, ...s) {
+    const e = this.events.get(t);
+    e && e.forEach((i) => {
+      i(...s);
+    });
+  }
+  once(t, s) {
+    const e = (...i) => {
+      s(...i), this.off(t, e);
+    };
+    this.on(t, e);
+  }
+}
+export {
+  c as EventEmitter
+};

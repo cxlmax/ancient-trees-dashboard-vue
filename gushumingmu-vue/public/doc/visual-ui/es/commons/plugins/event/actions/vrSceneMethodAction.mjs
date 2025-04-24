@@ -1,0 +1,12 @@
+const t = (n, r) => {
+  try {
+    const { vrSceneMethodAction: e } = n;
+    if (!window.SHJSceneVrViewer || (e.type === "vrSceneToggle" && (window.SHJSceneVrViewer.loadScene(e.sceneId), window.SHJSceneVrViewer.stopAutoRotate()), e.type === "vrSceneToggleAngle" && (window.SHJSceneVrViewer.setHfov(e.angle.hfov), window.SHJSceneVrViewer.setYaw(e.angle.yaw), window.SHJSceneVrViewer.setPitch(e.angle.pitch)), e.type === "vrSceneStartRotate" && window.SHJSceneVrViewer.startAutoRotate(), e.type === "vrScenePausedRotate" && window.SHJSceneVrViewer.stopAutoRotate(), !window.SHJSceneVrViewer.audio))
+      return;
+    e.type === "vrScenePlayMusic" && window.SHJSceneVrViewer.audio.value.play(), e.type === "vrScenePausedMusic" && window.SHJSceneVrViewer.audio.value.pause();
+  } catch {
+  }
+};
+export {
+  t as executeVrSceneMethodAction
+};

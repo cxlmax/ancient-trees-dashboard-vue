@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t=require("./index.vue.js"),u=require("../../../../../commons/utils/install.js"),e=u.withInstall(t.default);exports.ZvChartPieRound=e;exports.default=e;
