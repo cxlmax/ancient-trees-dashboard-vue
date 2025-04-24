@@ -16,13 +16,17 @@ import ZvCommonsProductModelYeOg from './components/zv-commons-product-model-YeO
 import ZvInteractionSelectXaDX from './components/zv-interaction-select-XaDX/index.vue'
 import ZvTextRealTimePMgL from './components/zv-text-real-time-PMgL/index.vue'
 import event_KvlzxX from './events/event_KvlzxX'
-import ZvTextOverNumberackA from './components/zv-text-over-number-ackA/index.vue'
-import ZvTextOverNumberAWzd from './components/zv-text-over-number-AWzd/index.vue'
-import ZvTextOverNumbercyAx from './components/zv-text-over-number-cyAx/index.vue'
-import ZvTextOverNumberrqRr from './components/zv-text-over-number-rqRr/index.vue'
-import ZvTextOverNumbervfxF from './components/zv-text-over-number-vfxF/index.vue'
-import ZvTextOverNumberpBOT from './components/zv-text-over-number-pBOT/index.vue'
-import ZvTextOverNumberYPII from './components/zv-text-over-number-YPII/index.vue'
+import ZvTextOverNumberjkzH from './components/zv-text-over-number-jkzH/index.vue'
+import ZvTextOverNumberNKgY from './components/zv-text-over-number-NKgY/index.vue'
+import ZvTextOverNumberRwqE from './components/zv-text-over-number-RwqE/index.vue'
+import ZvTextOverNumberbcyr from './components/zv-text-over-number-bcyr/index.vue'
+import ZvTextOverNumberPTpy from './components/zv-text-over-number-PTpy/index.vue'
+import ZvTextOverNumberBUAB from './components/zv-text-over-number-BUAB/index.vue'
+
+
+
+
+
 import ZvMediaVideoDynamicUelC from './components/zv-media-video-dynamic-UelC/index.vue'
 import ZvChartBarPolarGuZc from './components/zv-chart-bar-polar-GuZc/index.vue'
 import ZvChartBarHorizontalpXST from './components/zv-chart-bar-horizontal-pXST/index.vue'
@@ -252,668 +256,660 @@ onMounted(() => init())
                             <div class="layer-main">
                                 <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -1942, -87)` }">
 
-                                    <div class="layer-wrap layer-wrap_cypMJe" id="gVQ_vF7u2ZFR62YkRfWX">
-                                        <div class="layer-main">
+                                  <div class="layer-wrap layer-wrap_IlvSsi" id="gVQ_vF7u2ZFR62YkRfWX">
+                                    <div class="layer-main">
+                                      <div class="group"
+                                           :style="{ transform: `matrix(1, 0, 0, 1, -1942, -154)` }">
+
+                                        <div class="layer-wrap layer-wrap_zBmpuB" id="bT9zDj88AtQ03A2EoE7W">
+                                          <div class="layer-main">
                                             <div class="group"
-                                                :style="{ transform: `matrix(1, 0, 0, 1, -1942, -154)` }">
+                                                 :style="{ transform: `matrix(1, 0, 0, 1, -1942, -154)` }">
 
-                                                <div class="layer-wrap layer-wrap_xVOkNt" id="KSIqhY-_7y7AP2IUxhVM">
-                                                    <div class="layer-main">
-                                                        <div class="group"
-                                                            :style="{ transform: `matrix(1, 0, 0, 1, -2259, -248)` }">
-
-                                                            <div class="layer-wrap layer-wrap_yPJCxg"
-                                                                id="dJxp498UiOgSQNtydHGI">
-                                                                <div class="layer-main">
-                                                                    <div class="layer">
-                                                                        <div class="img-yNzi"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_TVxqiE"
-                                                                id="GDOwQeit3prmVkBvZIX9">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2259, -248)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_KAxdqF"
-                                                                            id="r93wJO23NGqj1_x9bGo_">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-ihGb"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_KVIOQV"
-                                                                            id="qVhHkzT7KMQ3v8US3vbd">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-weaC"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_AZWSkZ"
-                                                                id="fYOWdQv_UQDlK7XSG2eF">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2393, -252)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_FoZfsq"
-                                                                            id="o3MRLSZVAiVHmLLmvaLe">
-                                                                            <div class="layer-main">
-                                                                                <div class="group"
-                                                                                    :style="{ transform: `matrix(1, 0, 0, 1, -2405, -252)` }">
-
-                                                                                    <div class="layer-wrap layer-wrap_XwuoWo"
-                                                                                        id="nzEVX5WxWl4JrGimq0P8">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <ZvTextOverNumberackA />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_vFlyUS"
-                                                                                        id="tti0dhxX9IUd4f_10E3N">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-JsTI">台
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_ePshAc"
-                                                                                        id="-LleC6FZtPFHRgNKoZSp">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-RNqE">
-                                                                                                    土壤监测
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_PUlpBZ"
-                                                                            id="ROMI4eAYrrIenkwWRuuL">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-mdUA"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                              <div class="layer-wrap layer-wrap_xMWfVG"
+                                                   id="iLhTXQaMxSKE2NRTv4Mv">
+                                                <div class="layer-main">
+                                                  <div class="layer">
+                                                    <div class="img-riSO"></div>
+                                                  </div>
                                                 </div>
-                                                <div class="layer-wrap layer-wrap_MDkZOs" id="Hedi7VAA8ANWJvjyPN6F">
-                                                    <div class="layer-main">
-                                                        <div class="group"
-                                                            :style="{ transform: `matrix(1, 0, 0, 1, -2258, -156)` }">
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_DCsMlI"
+                                                   id="AciWrmlBJKpMCqobYYHy">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -1942, -154)` }">
 
-                                                            <div class="layer-wrap layer-wrap_fTGRVv"
-                                                                id="I6izPC5rr8NbQ0_ngKv6">
-                                                                <div class="layer-main">
-                                                                    <div class="layer">
-                                                                        <div class="img-vLEL"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_ibYZsP"
-                                                                id="NeNwGOcrDiTdE5VmBHNM">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2258, -156)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_ytIZPi"
-                                                                            id="39HpN4AQ0ISN8Nf0yM1a">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-QOgB"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_ErQYgA"
-                                                                            id="eBj-cH_X9BUIUgtelSUG">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-bjtV"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_ngGMUT"
-                                                                id="IXYQg7nC8JDMmj_1NMmH">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2392, -158)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_nVvMoi"
-                                                                            id="95bQaR8yHQY9qbgzCd0I">
-                                                                            <div class="layer-main">
-                                                                                <div class="group"
-                                                                                    :style="{ transform: `matrix(1, 0, 0, 1, -2404, -158)` }">
-
-                                                                                    <div class="layer-wrap layer-wrap_swLRwk"
-                                                                                        id="e2U350n9VuuadJuzOsQF">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <ZvTextOverNumberAWzd />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_mZFKGq"
-                                                                                        id="QsOoFHgqZRzTs8X9jzlB">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-paYc">台
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_qSTXmB"
-                                                                                        id="18ZNzD7fShkkCoHFw5BG">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-WbhU">诱捕器
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_OAyRZv"
-                                                                            id="oTUUWFzwb_QS7sGGZdSR">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-mLmo"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                    <div class="layer-wrap layer-wrap_gUKeIv"
+                                                         id="KJTRxmXyccrftfoojNGP">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-nncZ"></div>
                                                         </div>
+                                                      </div>
                                                     </div>
-                                                </div>
-                                                <div class="layer-wrap layer-wrap_fazWjw" id="ld8TGjQKu-OD1dUxa3E2">
-                                                    <div class="layer-main">
-                                                        <div class="group"
-                                                            :style="{ transform: `matrix(1, 0, 0, 1, -1944, -328)` }">
-
-                                                            <div class="layer-wrap layer-wrap_KoQpDE"
-                                                                id="QPfoAo2_Z_grIQAcEu1Z">
-                                                                <div class="layer-main">
-                                                                    <div class="layer">
-                                                                        <div class="img-WQwB"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_tCVCuf"
-                                                                id="ruYm0ESc4mNb05OXYk3O">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -1944, -332)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_vWUMPs"
-                                                                            id="Kt17pGT_PR6ZPd2fJk_7">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-lnkJ"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_dejUNO"
-                                                                            id="RHZIqOVQ72QIFlOFcYX9">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-mlZJ"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_BhLzVA"
-                                                                id="xUk21n1ZaQG8ZIuD2CII">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2075, -328)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_CofcPF"
-                                                                            id="yDX4pc7ibD32nAaFjfge">
-                                                                            <div class="layer-main">
-                                                                                <div class="group"
-                                                                                    :style="{ transform: `matrix(1, 0, 0, 1, -2086, -328)` }">
-
-                                                                                    <div class="layer-wrap layer-wrap_EzhLSZ"
-                                                                                        id="PNsu25G6b5npJwreho2-">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <ZvTextOverNumbercyAx />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_OOxqFO"
-                                                                                        id="R58cAbdFUDQ6vW-HDiUZ">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-pfiU">台
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_klPFpM"
-                                                                                        id="_ye9yAO9IyfbBLiaRyTc">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-EPnW">
-                                                                                                    多光谱检测仪
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_vIXEnY"
-                                                                            id="2z_5npt1Qdxz1BatN669">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-wpqz"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                    <div class="layer-wrap layer-wrap_CtPBLt"
+                                                         id="BDdkLze6YFxCBc-zm9bw">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-gBen"></div>
                                                         </div>
+                                                      </div>
                                                     </div>
+                                                  </div>
                                                 </div>
-                                                <div class="layer-wrap layer-wrap_msObwG" id="dH4dxTE3qAX4dNiLEcK9">
-                                                    <div class="layer-main">
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_KBSLoS"
+                                                   id="bJc58QDe4TaXH2LQrxuC">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2074, -159)` }">
+
+                                                    <div class="layer-wrap layer-wrap_eFvTNd"
+                                                         id="KcZSDITGOBmfu8PwWxmt">
+                                                      <div class="layer-main">
                                                         <div class="group"
-                                                            :style="{ transform: `matrix(1, 0, 0, 1, -2090, -248)` }">
+                                                             :style="{ transform: `matrix(1, 0, 0, 1, -2086, -159)` }">
 
-                                                            <div class="layer-wrap layer-wrap_OFEEal"
-                                                                id="AYS5evUkPclhDbVZWZzc">
-                                                                <div class="layer-main">
-                                                                    <div class="layer">
-                                                                        <div class="img-SrJT"></div>
-                                                                    </div>
-                                                                </div>
+                                                          <div class="layer-wrap layer-wrap_fUIMjq"
+                                                               id="ecJ9h41VpRPoU9GDj_lm">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <ZvTextOverNumberjkzH />
+                                                              </div>
                                                             </div>
-                                                            <div class="layer-wrap layer-wrap_RdAEif"
-                                                                id="e9r54mZ9xIM3SUw3O_Ms">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2090, -248)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_nDdsuF"
-                                                                            id="FV5yEpVeymN1LgMzKwK2">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-vujV"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_ywYpnA"
-                                                                            id="qUqNJZ9S2Bd7e1w0uqc0">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-ktFN"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_ufsoxK"
+                                                               id="v7Gim7ke5qlQANxOrqdR">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-vIEC">℃
+                                                                </p>
+                                                              </div>
                                                             </div>
-                                                            <div class="layer-wrap layer-wrap_wrYHiR"
-                                                                id="tO-sl33Lih7ZSp1C7s_L">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2224, -250)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_GkEHGs"
-                                                                            id="dElukmqWiCXhqT1Ob23b">
-                                                                            <div class="layer-main">
-                                                                                <div class="group"
-                                                                                    :style="{ transform: `matrix(1, 0, 0, 1, -2236, -250)` }">
-
-                                                                                    <div class="layer-wrap layer-wrap_zFtZco"
-                                                                                        id="L97CMRrMUKPCLzSTWzHd">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <ZvTextOverNumberrqRr />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_AXbMsV"
-                                                                                        id="snkrkYoYnxRG9j5i6J3T">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-oRve">台
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_WaPHut"
-                                                                                        id="1So7BPPuunYZcD67ob6x">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-hYoh">
-                                                                                                    土壤监测
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_Rhrzcu"
-                                                                            id="ZEMnngIYkR7g0MgR-vZE">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-wPgC"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_KPHYCK"
+                                                               id="sRQBxGKwjayagNCk7Zwi">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-LwLc">气温
+                                                                </p>
+                                                              </div>
                                                             </div>
+                                                          </div>
                                                         </div>
+                                                      </div>
                                                     </div>
-                                                </div>
-                                                <div class="layer-wrap layer-wrap_wMXgYD" id="AXB-UlG_gF125r7d7i85">
-                                                    <div class="layer-main">
-                                                        <div class="group"
-                                                            :style="{ transform: `matrix(1, 0, 0, 1, -2086, -154)` }">
-
-                                                            <div class="layer-wrap layer-wrap_FHTvKm"
-                                                                id="npk4zSzX3Zs_aoZ_FK1J">
-                                                                <div class="layer-main">
-                                                                    <div class="layer">
-                                                                        <div class="img-NUgc"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_TZpAFt"
-                                                                id="ytdfsr_HhODFnHM750O0">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2086, -154)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_vCpUjN"
-                                                                            id="TUkVb6ujV-NPyYlSCIm5">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-zpZg"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_ItncZo"
-                                                                            id="CUMvFf6qP16APncKtMT4">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-YLyD"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_fBSRqU"
-                                                                id="AUb7fXmjeIdLBxZHnj--">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2221, -158)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_fujKXh"
-                                                                            id="NpTP5Nijj9oPrksfcQua">
-                                                                            <div class="layer-main">
-                                                                                <div class="group"
-                                                                                    :style="{ transform: `matrix(1, 0, 0, 1, -2233, -158)` }">
-
-                                                                                    <div class="layer-wrap layer-wrap_cFQHmL"
-                                                                                        id="ghK_8E-d2qjhGDSTOCkM">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <ZvTextOverNumbervfxF />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_AtwBAj"
-                                                                                        id="j32TIXAY_PucN54GZ9Td">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-OVbd">台
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_iZgwKz"
-                                                                                        id="yrDxpgHwZBX5LbhDPRy0">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-YmHj">诱捕器
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_xFQKXn"
-                                                                            id="Uk5bQntUBS9c_hEiQ3ML">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-miPC"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                    <div class="layer-wrap layer-wrap_bLTZLR"
+                                                         id="Em9QgEr-ND0Xe2hjqmHt">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-ehBr"></div>
                                                         </div>
+                                                      </div>
                                                     </div>
+                                                  </div>
                                                 </div>
-                                                <div class="layer-wrap layer-wrap_sAWQpF" id="NZI6159eQ7kJlPuzlPZK">
-                                                    <div class="layer-main">
-                                                        <div class="group"
-                                                            :style="{ transform: `matrix(1, 0, 0, 1, -1942, -248)` }">
-
-                                                            <div class="layer-wrap layer-wrap_HjrawV"
-                                                                id="j7gm2EL6YAIeQT3JrjUx">
-                                                                <div class="layer-main">
-                                                                    <div class="layer">
-                                                                        <div class="img-mAsz"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_iRzApY"
-                                                                id="uFpEUkrpYj0C2xBpri8w">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -1942, -248)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_fahITo"
-                                                                            id="myxAEOptKIJiYeQlFigM">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-kptA"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_yfjNEC"
-                                                                            id="lRcIVgs8J8baBRQOC2kn">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-uMOK"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_KrjQQj"
-                                                                id="eeH6o1MAYKfCTm4w96ln">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2076, -250)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_SypCjv"
-                                                                            id="fVicvDYcZvl1ONN8hhFH">
-                                                                            <div class="layer-main">
-                                                                                <div class="group"
-                                                                                    :style="{ transform: `matrix(1, 0, 0, 1, -2088, -250)` }">
-
-                                                                                    <div class="layer-wrap layer-wrap_cEcIoW"
-                                                                                        id="1BjAuv4JfRHuhR3etqGx">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <ZvTextOverNumberpBOT />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_FesmDk"
-                                                                                        id="wCin_dok7mFoLtQbcGnd">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-uNhz">台
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_NtgGwE"
-                                                                                        id="CfHFQ2CRwh_57PE__8US">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-bFJt">
-                                                                                                    倾角传感器</p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_RVyYnX"
-                                                                            id="t9lslU53qs2m9U0ykVv0">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-Ibco"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="layer-wrap layer-wrap_AugjZR" id="bT9zDj88AtQ03A2EoE7W">
-                                                    <div class="layer-main">
-                                                        <div class="group"
-                                                            :style="{ transform: `matrix(1, 0, 0, 1, -1942, -154)` }">
-
-                                                            <div class="layer-wrap layer-wrap_hkzynl"
-                                                                id="iLhTXQaMxSKE2NRTv4Mv">
-                                                                <div class="layer-main">
-                                                                    <div class="layer">
-                                                                        <div class="img-WUZY"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_wlISMo"
-                                                                id="AciWrmlBJKpMCqobYYHy">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -1942, -154)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_ybkJVM"
-                                                                            id="KJTRxmXyccrftfoojNGP">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-WvdG"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_YKUfqs"
-                                                                            id="BDdkLze6YFxCBc-zm9bw">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-Xgnh"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="layer-wrap layer-wrap_LQaLzu"
-                                                                id="bJc58QDe4TaXH2LQrxuC">
-                                                                <div class="layer-main">
-                                                                    <div class="group"
-                                                                        :style="{ transform: `matrix(1, 0, 0, 1, -2076, -158)` }">
-
-                                                                        <div class="layer-wrap layer-wrap_lQnSGU"
-                                                                            id="KcZSDITGOBmfu8PwWxmt">
-                                                                            <div class="layer-main">
-                                                                                <div class="group"
-                                                                                    :style="{ transform: `matrix(1, 0, 0, 1, -2088, -158)` }">
-
-                                                                                    <div class="layer-wrap layer-wrap_LAVADb"
-                                                                                        id="ecJ9h41VpRPoU9GDj_lm">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <ZvTextOverNumberYPII />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_znkAUp"
-                                                                                        id="v7Gim7ke5qlQANxOrqdR">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-tTwh">℃
-                                                                                                </p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="layer-wrap layer-wrap_UwDLoh"
-                                                                                        id="sRQBxGKwjayagNCk7Zwi">
-                                                                                        <div class="layer-main">
-                                                                                            <div class="layer">
-                                                                                                <p class="text-LbKR">
-                                                                                                    气温</p>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="layer-wrap layer-wrap_cdKuRd"
-                                                                            id="Em9QgEr-ND0Xe2hjqmHt">
-                                                                            <div class="layer-main">
-                                                                                <div class="layer">
-                                                                                    <div class="img-imXo"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                              </div>
                                             </div>
+                                          </div>
                                         </div>
+                                        <div class="layer-wrap layer-wrap_tPkvRE" id="AXB-UlG_gF125r7d7i85">
+                                          <div class="layer-main">
+                                            <div class="group"
+                                                 :style="{ transform: `matrix(1, 0, 0, 1, -2086, -154)` }">
+
+                                              <div class="layer-wrap layer-wrap_WgJAaH"
+                                                   id="npk4zSzX3Zs_aoZ_FK1J">
+                                                <div class="layer-main">
+                                                  <div class="layer">
+                                                    <div class="img-czYG"></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_YDtJqG"
+                                                   id="ytdfsr_HhODFnHM750O0">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2086, -154)` }">
+
+                                                    <div class="layer-wrap layer-wrap_TuAkFi"
+                                                         id="TUkVb6ujV-NPyYlSCIm5">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-pltm"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_vLcRnS"
+                                                         id="CUMvFf6qP16APncKtMT4">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-qulL"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_NZaCPp"
+                                                   id="AUb7fXmjeIdLBxZHnj--">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2221, -158)` }">
+
+                                                    <div class="layer-wrap layer-wrap_wmosqa"
+                                                         id="NpTP5Nijj9oPrksfcQua">
+                                                      <div class="layer-main">
+                                                        <div class="group"
+                                                             :style="{ transform: `matrix(1, 0, 0, 1, -2233, -158)` }">
+
+                                                          <div class="layer-wrap layer-wrap_ZOkzbn"
+                                                               id="ghK_8E-d2qjhGDSTOCkM">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <ZvTextOverNumberNKgY />
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_BYsErC"
+                                                               id="j32TIXAY_PucN54GZ9Td">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-mvaN">LUX
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_bxLdhD"
+                                                               id="yrDxpgHwZBX5LbhDPRy0">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-EBol">
+                                                                  光照强度
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_HtZqgX"
+                                                         id="Uk5bQntUBS9c_hEiQ3ML">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-Wrrz"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="layer-wrap layer-wrap_nAGMfI" id="Hedi7VAA8ANWJvjyPN6F">
+                                          <div class="layer-main">
+                                            <div class="group"
+                                                 :style="{ transform: `matrix(1, 0, 0, 1, -2258, -156)` }">
+
+                                              <div class="layer-wrap layer-wrap_gGhWFs"
+                                                   id="I6izPC5rr8NbQ0_ngKv6">
+                                                <div class="layer-main">
+                                                  <div class="layer">
+                                                    <div class="img-rKyh"></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_RuCJAb"
+                                                   id="NeNwGOcrDiTdE5VmBHNM">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2258, -156)` }">
+
+                                                    <div class="layer-wrap layer-wrap_rufzDS"
+                                                         id="39HpN4AQ0ISN8Nf0yM1a">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-qbVd"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_uyLTfS"
+                                                         id="eBj-cH_X9BUIUgtelSUG">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-LxvY"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_DqeAzh"
+                                                   id="IXYQg7nC8JDMmj_1NMmH">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2389, -160)` }">
+
+                                                    <div class="layer-wrap layer-wrap_TwAqJZ"
+                                                         id="95bQaR8yHQY9qbgzCd0I">
+                                                      <div class="layer-main">
+                                                        <div class="group"
+                                                             :style="{ transform: `matrix(1, 0, 0, 1, -2401, -160)` }">
+
+                                                          <div class="layer-wrap layer-wrap_yklgrT"
+                                                               id="e2U350n9VuuadJuzOsQF">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <ZvTextOverNumberRwqE />
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_skXFHE"
+                                                               id="QsOoFHgqZRzTs8X9jzlB">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-Qnjo">%RH
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_NBReNF"
+                                                               id="18ZNzD7fShkkCoHFw5BG">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-ouBV">湿度
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_oumLwk"
+                                                         id="oTUUWFzwb_QS7sGGZdSR">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-bJFD"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="layer-wrap layer-wrap_oCuafO" id="NZI6159eQ7kJlPuzlPZK">
+                                          <div class="layer-main">
+                                            <div class="group"
+                                                 :style="{ transform: `matrix(1, 0, 0, 1, -1942, -248)` }">
+
+                                              <div class="layer-wrap layer-wrap_DKqTzl"
+                                                   id="j7gm2EL6YAIeQT3JrjUx">
+                                                <div class="layer-main">
+                                                  <div class="layer">
+                                                    <div class="img-dycB"></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_mdCHvR"
+                                                   id="uFpEUkrpYj0C2xBpri8w">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -1942, -248)` }">
+
+                                                    <div class="layer-wrap layer-wrap_ouVcKV"
+                                                         id="myxAEOptKIJiYeQlFigM">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-PnFQ"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_khrAJx"
+                                                         id="lRcIVgs8J8baBRQOC2kn">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-gIZo"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_YrkVam"
+                                                   id="eeH6o1MAYKfCTm4w96ln">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2074, -252)` }">
+
+                                                    <div class="layer-wrap layer-wrap_TPQqRU"
+                                                         id="fVicvDYcZvl1ONN8hhFH">
+                                                      <div class="layer-main">
+                                                        <div class="group"
+                                                             :style="{ transform: `matrix(1, 0, 0, 1, -2086, -252)` }">
+
+                                                          <div class="layer-wrap layer-wrap_dDCkjh"
+                                                               id="1BjAuv4JfRHuhR3etqGx">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <ZvTextOverNumberbcyr />
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_NcFNeM"
+                                                               id="wCin_dok7mFoLtQbcGnd">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-mvlo">kPa
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_jrVLxb"
+                                                               id="CfHFQ2CRwh_57PE__8US">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-hgdZ">气压
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_eRnjOx"
+                                                         id="t9lslU53qs2m9U0ykVv0">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-wHYd"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="layer-wrap layer-wrap_cphmCx" id="dH4dxTE3qAX4dNiLEcK9">
+                                          <div class="layer-main">
+                                            <div class="group"
+                                                 :style="{ transform: `matrix(1, 0, 0, 1, -2090, -248)` }">
+
+                                              <div class="layer-wrap layer-wrap_XXySFi"
+                                                   id="AYS5evUkPclhDbVZWZzc">
+                                                <div class="layer-main">
+                                                  <div class="layer">
+                                                    <div class="img-VFxs"></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_XTSoOt"
+                                                   id="e9r54mZ9xIM3SUw3O_Ms">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2090, -248)` }">
+
+                                                    <div class="layer-wrap layer-wrap_ZAoVjh"
+                                                         id="FV5yEpVeymN1LgMzKwK2">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-Upux"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_taABUw"
+                                                         id="qUqNJZ9S2Bd7e1w0uqc0">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-nQtg"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_Nzbtnv"
+                                                   id="tO-sl33Lih7ZSp1C7s_L">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2235, -252)` }">
+
+                                                    <div class="layer-wrap layer-wrap_WAqjVY"
+                                                         id="dElukmqWiCXhqT1Ob23b">
+                                                      <div class="layer-main">
+                                                        <div class="group"
+                                                             :style="{ transform: `matrix(1, 0, 0, 1, -2247, -252)` }">
+
+                                                          <div class="layer-wrap layer-wrap_ZijLIJ"
+                                                               id="L97CMRrMUKPCLzSTWzHd">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <ZvTextOverNumberPTpy />
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_abtfAj"
+                                                               id="snkrkYoYnxRG9j5i6J3T">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-MUko">米/秒
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_STBMDX"
+                                                               id="1So7BPPuunYZcD67ob6x">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-eHsZ">风速
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_DmHQvg"
+                                                         id="ZEMnngIYkR7g0MgR-vZE">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-AZmg"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="layer-wrap layer-wrap_njTdVb" id="KSIqhY-_7y7AP2IUxhVM">
+                                          <div class="layer-main">
+                                            <div class="group"
+                                                 :style="{ transform: `matrix(1, 0, 0, 1, -2259, -248)` }">
+
+                                              <div class="layer-wrap layer-wrap_FBSGcA"
+                                                   id="dJxp498UiOgSQNtydHGI">
+                                                <div class="layer-main">
+                                                  <div class="layer">
+                                                    <div class="img-DHBw"></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_agYDgF"
+                                                   id="GDOwQeit3prmVkBvZIX9">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2259, -248)` }">
+
+                                                    <div class="layer-wrap layer-wrap_vJEoAY"
+                                                         id="r93wJO23NGqj1_x9bGo_">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-wwPJ"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_VuWiyd"
+                                                         id="qVhHkzT7KMQ3v8US3vbd">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-MotC"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_LJWYKe"
+                                                   id="fYOWdQv_UQDlK7XSG2eF">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2386, -253)` }">
+
+                                                    <div class="layer-wrap layer-wrap_UFEfxW"
+                                                         id="o3MRLSZVAiVHmLLmvaLe">
+                                                      <div class="layer-main">
+                                                        <div class="group"
+                                                             :style="{ transform: `matrix(1, 0, 0, 1, -2386, -253)` }">
+
+                                                          <div class="layer-wrap layer-wrap_GoaimP"
+                                                               id="nzEVX5WxWl4JrGimq0P8">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <ZvTextOverNumberBUAB />
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_BwJPth"
+                                                               id="tti0dhxX9IUd4f_10E3N">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-DNMv">%
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_bAyEPw"
+                                                               id="-LleC6FZtPFHRgNKoZSp">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-ETTi">
+                                                                  二氧化碳浓度
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_MydruN"
+                                                         id="ROMI4eAYrrIenkwWRuuL">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-pAvp"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="layer-wrap layer-wrap_RXdWSR" id="ld8TGjQKu-OD1dUxa3E2">
+                                          <div class="layer-main">
+                                            <div class="group"
+                                                 :style="{ transform: `matrix(1, 0, 0, 1, -1944, -329)` }">
+
+                                              <div class="layer-wrap layer-wrap_GkKoOJ"
+                                                   id="QPfoAo2_Z_grIQAcEu1Z">
+                                                <div class="layer-main">
+                                                  <div class="layer">
+                                                    <div class="img-ZlFT"></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_yOKMUQ"
+                                                   id="ruYm0ESc4mNb05OXYk3O">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -1944, -332)` }">
+
+                                                    <div class="layer-wrap layer-wrap_oWqDod"
+                                                         id="Kt17pGT_PR6ZPd2fJk_7">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-ZeTP"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_qUjdjR"
+                                                         id="RHZIqOVQ72QIFlOFcYX9">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-vTDC"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="layer-wrap layer-wrap_oVioOU"
+                                                   id="xUk21n1ZaQG8ZIuD2CII">
+                                                <div class="layer-main">
+                                                  <div class="group"
+                                                       :style="{ transform: `matrix(1, 0, 0, 1, -2075, -329)` }">
+
+                                                    <div class="layer-wrap layer-wrap_YkBMwX"
+                                                         id="yDX4pc7ibD32nAaFjfge">
+                                                      <div class="layer-main">
+                                                        <div class="group"
+                                                             :style="{ transform: `matrix(1, 0, 0, 1, -2075, -329)` }">
+
+                                                          <div class="layer-wrap layer-wrap_SsTxol"
+                                                               id="R58cAbdFUDQ6vW-HDiUZ">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-LKal">东北风
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="layer-wrap layer-wrap_JwqiAT"
+                                                               id="_ye9yAO9IyfbBLiaRyTc">
+                                                            <div class="layer-main">
+                                                              <div class="layer">
+                                                                <p class="text-vdTK">风向
+                                                                </p>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="layer-wrap layer-wrap_CMuOQn"
+                                                         id="2z_5npt1Qdxz1BatN669">
+                                                      <div class="layer-main">
+                                                        <div class="layer">
+                                                          <div class="img-UeiT"></div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
+                                  </div>
+
                                     <div class="layer-wrap layer-wrap_uoLNnD" id="sVAf3Sx62hvXe4TMLYrK">
                                         <div class="layer-main">
                                             <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -1978, -87)` }">
@@ -1022,13 +1018,23 @@ onMounted(() => init())
                             <div class="layer-main">
                                 <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -1978, -406)` }">
 
-                                    <div class="layer-wrap layer-wrap_zGWqMD" id="ADixqzurpeQNk4KQwNzK">
-                                        <div class="layer-main">
-                                            <div class="layer">
-                                                <div class="img-nzFY"></div>
-                                            </div>
+
+                                    <div class="layer-wrap layer-wrap_VovMHb" id="mbYo43ldG5PYmmL5cjep">
+                                      <div class="layer-main">
+                                        <div class="layer">
+                                          <ZvTextTextDynamicvOdx />
                                         </div>
+                                      </div>
                                     </div>
+                                    <div class="layer-wrap layer-wrap_AwvAXO" id="G-IWQM4bUVT6DH7eiG1c">
+                                      <div class="layer-main">
+                                        <div class="layer">
+                                          <ZvChartOtherRadarAyVL />
+                                        </div>
+                                      </div>
+                                    </div>
+
+
                                     <div class="layer-wrap layer-wrap_ZUtCTi" id="L4DNYQNSQpk_PJ4J9-Fj">
                                         <div class="layer-main">
                                             <div class="group"
