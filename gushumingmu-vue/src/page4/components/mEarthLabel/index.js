@@ -14,10 +14,15 @@ import {
   AdditiveBlending,
   Fog,
   Color,
+  BufferGeometry,
+  BufferAttribute,
+  Points,
+  PointsMaterial
 } from "three";
 import * as THREE from "three";
 
 import { Mini3d, Label3d } from "@/page4/mini3d";
+import { Particles } from '../mini3d/components/Particles.js';
 import { geoSphereCoord, generateGrid } from "./utils";
 
 import pointIconBg from "./icon-bg.png";
@@ -70,12 +75,177 @@ export class App extends Mini3d {
       // this.initGoguang();
       // this.initGoguang2();
       // this.initLabel();
+      // 创建粒子系统
+      this.createParticleSystem();
       // 射线检测
       this.checkIntersect();
       if(this.onComplete){
         this.onComplete()
       }
     });
+  }
+
+  // 创建粒子系统
+  createParticleSystem() {
+    // 创建自定义粒子系统
+    this.createCustomParticles();
+  }
+
+  // 创建自定义无规则运动的粒子
+  createCustomParticles() {
+    console.log("创建粒子系统");
+    
+    // 粒子数量
+    const particleCount = 200; // 增加粒子数量
+    // 粒子范围
+    const range = 400; // 减小范围，使粒子更集中
+    
+    // 创建几何体
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const velocities = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    
+    // 初始化粒子位置、速度和颜色
+    for (let i = 0; i < particleCount; i++) {
+      // 位置：在球体范围内随机分布
+      const radius = range * 0.8 * Math.random();
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.random() * Math.PI;
+      
+      const x = radius * Math.sin(phi) * Math.cos(theta);
+      const y = radius * Math.sin(phi) * Math.sin(theta);
+      const z = radius * Math.cos(phi);
+      
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
+      
+      // 速度：随机方向和大小
+      velocities[i * 3] = (Math.random() - 0.5) * 0.1; // 增加速度
+      velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.1;
+      velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.1;
+      
+      // 颜色：从青色到蓝色的渐变，增加亮度
+      const hue = 0.5 + Math.random() * 0.1; // 青色到蓝色范围
+      const saturation = 0.8 + Math.random() * 0.2;
+      const lightness = 0.7 + Math.random() * 0.3; // 增加亮度
+      
+      const color = new THREE.Color().setHSL(hue, saturation, lightness);
+      colors[i * 3] = color.r;
+      colors[i * 3 + 1] = color.g;
+      colors[i * 3 + 2] = color.b;
+    }
+    
+    // 设置几何体属性
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('velocity', new THREE.BufferAttribute(velocities, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    
+    // 创建材质
+    const material = new THREE.PointsMaterial({
+      size: 15, // 增加粒子大小
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.8, // 增加不透明度
+      blending: THREE.AdditiveBlending,
+      depthTest: false,
+      map: Particles.createTexture()
+    });
+    
+    // 创建粒子系统
+    this.particleSystem = new THREE.Points(geometry, material);
+    
+    // 将粒子系统放在地球附近
+    this.particleSystem.position.set(0, 0, 0);
+    
+    // 添加到场景
+    this.sceneGroup.add(this.particleSystem);
+    
+    console.log("粒子系统已添加到场景", this.particleSystem);
+    
+    // 添加更新函数
+    this.time.on("tick", (delta, elapsedTime) => {
+      this.updateParticles(delta, elapsedTime);
+    });
+  }
+  
+  // 更新粒子位置
+  updateParticles(delta, elapsedTime) {
+    if (!this.particleSystem) {
+      console.log("粒子系统不存在");
+      return;
+    }
+    
+    try {
+      const positions = this.particleSystem.geometry.attributes.position;
+      const velocities = this.particleSystem.geometry.attributes.velocity;
+      const count = positions.count;
+      const range = 200; // 与创建时保持一致
+      
+      for (let i = 0; i < count; i++) {
+        // 获取当前位置和速度
+        let x = positions.getX(i);
+        let y = positions.getY(i);
+        let z = positions.getZ(i);
+        
+        let vx = velocities.getX(i);
+        let vy = velocities.getY(i);
+        let vz = velocities.getZ(i);
+        
+        // 添加随机扰动 - 增加扰动强度
+        vx += (Math.random() - 0.5) * 0.01;
+        vy += (Math.random() - 0.5) * 0.01;
+        vz += (Math.random() - 0.5) * 0.01;
+        
+        // 限制速度
+        const maxSpeed = 0.2; // 增加最大速度
+        const speed = Math.sqrt(vx * vx + vy * vy + vz * vz);
+        if (speed > maxSpeed) {
+          vx = (vx / speed) * maxSpeed;
+          vy = (vy / speed) * maxSpeed;
+          vz = (vz / speed) * maxSpeed;
+        }
+        
+        // 更新位置
+        x += vx * delta * 60;
+        y += vy * delta * 60;
+        z += vz * delta * 60;
+        
+        // 边界检查：如果粒子超出范围，将其反弹或重置
+        const distance = Math.sqrt(x * x + y * y + z * z);
+        if (distance > range) {
+          // 向中心方向施加力
+          const factor = 0.9;
+          x *= factor;
+          y *= factor;
+          z *= factor;
+          
+          // 反转速度方向
+          vx *= -0.7;
+          vy *= -0.7;
+          vz *= -0.7;
+        }
+        
+        // 更新位置和速度
+        positions.setXYZ(i, x, y, z);
+        velocities.setXYZ(i, vx, vy, vz);
+      }
+      
+      // 标记需要更新
+      positions.needsUpdate = true;
+      velocities.needsUpdate = true;
+      
+      // 旋转整个粒子系统
+      this.particleSystem.rotation.y += 0.003 * delta * 60; // 增加旋转速度
+      
+      // 缩放粒子系统大小，使其呼吸效果
+      const scale = 1 + 0.05 * Math.sin(elapsedTime * 0.5);
+      this.particleSystem.scale.set(scale, scale, scale);
+      
+    } catch (error) {
+      console.error("更新粒子系统时出错:", error);
+    }
   }
   initEarth() {
 
