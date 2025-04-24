@@ -20,8 +20,8 @@ const id = ref('ZjnjbBDcKWDTB0nW0TSo')
     position: relative;
     width: 100%;
     height: 100%;
-    opacity: 0.7;
-    filter: brightness(1.2) drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+    opacity: 0.65;
+    filter: brightness(1.2) drop-shadow(0 0 10px #1DAB7E87);
 }
 
 .hologram-container::before {

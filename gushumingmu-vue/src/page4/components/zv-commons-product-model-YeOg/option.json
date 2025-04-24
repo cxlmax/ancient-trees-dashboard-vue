@@ -77,7 +77,7 @@
 		"wheelDeltaPercentage": 0.010000000000000009,
 		"alpha": 45,
 		"upperRadiusLimit": 30,
-		"radius": 5,
+		"radius": 6,
 		"lowerRadiusLimit": 2,
 		"beta": 160,
 		"panningSensibility": 0.01

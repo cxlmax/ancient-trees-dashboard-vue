@@ -174,7 +174,7 @@ onBeforeUnmount(() => {
       margin-left: -25px;
       width: 50px;
       height: 50px;
-      animation: rotate360 3s linear infinite;
+      animation: rotate360 8s linear infinite;
     }
   }
 }

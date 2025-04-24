@@ -52,7 +52,7 @@ onMounted(() => init())
     <div class="shj-page autoAdapter" ref="pageRef">
         <div class="shj-page-content" :style="{ transform }" v-if="!pageLoading">
             <bg-scene></bg-scene>
-            <div style="position: absolute; top: 480px; left: 523px; width: 1505px; height: 600px; z-index: 0;">
+            <div style="position: absolute; top: 440px; left: 523px; width: 1505px; height: 600px; z-index: 0;">
                 <mEarthLabel></mEarthLabel>
             </div>
             <div class="layer-wrap layer-wrap_xPvNqU" id="ZjnjbBDcKWDTB0nW0TSo">

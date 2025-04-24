@@ -301,7 +301,7 @@ export class App extends Mini3d {
     this.sceneGroup.add(this.ringGroup);
 
     //圆环半径
-    let geometry = new PlaneGeometry(300, 300);
+    let geometry = new PlaneGeometry(400, 400);
     // 圆环1
     let ring01 = this.assets.getResource("ring01");
     let ring01Material = new MeshBasicMaterial({
@@ -365,14 +365,16 @@ export class App extends Mini3d {
     
 
     this.time.on("tick", (delta, elapsedTime) => {
-      ring01Mesh.rotation.z += delta * 0.1;
-      ring03Mesh.rotation.z -= delta;
-      ring04Mesh.rotation.z += delta;
+      ring01Mesh.rotation.z += delta * 0.05; // 降低速度从0.1到0.05
+      ring03Mesh.rotation.z -= delta * 0.1; // 降低速度从1到0.3
+      ring04Mesh.rotation.z += delta * 0.8; // 降低速度从1到0.3
     });
   }
 
+  //5个环绕的圈圈
+
   initLabel(labelArr=[]) {
-    const radius = 130; // 半径200
+    const radius = 180; // 半径200
     
     const count = labelArr.length; // 统计数量
     this.label3d = new Label3d(this);
@@ -404,6 +406,7 @@ export class App extends Mini3d {
     });
   }
   // 射线检测
+  
   checkIntersect() {
     this.time.on("tick", (delta) => {
       // this.labelGroup.rotation.y += delta;
