@@ -1,7 +1,7 @@
 {
 	"color": ["#218B74", "#1AD9A0", "#FFD666", "#E37E4B", "#E6C797", "#A5D63F", "#43CF7C", "#FFC300"],
 	"legend": {
-		"itemGap": 40,
+		"itemGap": 50,
 		"pageIconSize": 15,
 		"orient": "vertical",
 		"itemHeight": 18,
@@ -11,9 +11,10 @@
 		"pageIconInactiveColor": "#aaa",
 		"animation": true,
 		"top": "middle",
-		"left": "right",
+		"left": "70%",
 		"selectedMode": true,
 		"itemWidth": 18,
+		"width": 250,
 		"textStyle": {
 			"color": "#ffffff",
 			"textShadowColor": "",
@@ -54,7 +55,7 @@
 			"fontSize": 12,
 			"position": "outside",
 			"fontStyle": "normal",
-			"distanceToLabelLine": 5,
+			"distanceToLabelLine": 4,
 			"fontWeight": "normal",
 			"alignTo": "none"
 		},
@@ -99,7 +100,7 @@
 			"label": {
 				"rotate": 0,
 				"color": "#fff",
-				"show": true,
+				"show": false,
 				"fontSize": 40,
 				"fontStyle": "normal",
 				"fontWeight": "bold"

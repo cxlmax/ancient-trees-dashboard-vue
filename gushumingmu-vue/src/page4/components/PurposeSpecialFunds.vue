@@ -117,6 +117,8 @@ const option = ref({
         color: "#ABCCFF",
         fontSize: 10,
         interval: 0,
+        fontFamily: "SourceHanSansSC-Bold",
+        fontWeight: "bold",
       },
     },
   ],
@@ -131,6 +133,8 @@ const option = ref({
         interval: 0,
         show: false,
         verticalAlign: "top",
+        fontFamily: "SourceHanSansSC-Bold",
+        fontWeight: "bold",
       },
       axisLine: {
         show: false,
@@ -175,10 +179,14 @@ const option = ref({
         color: "#16C1A6",
         fontSize: 15,
         formatter: "{title|{b}} ",
+        fontFamily: "SourceHanSansSC-Bold",
+        fontWeight: "bold",
         rich: {
           title: {
-            color: "#FFFFFF",
+            color: "#D9D9D9",
             fontSize: 15,
+            fontFamily: "SourceHanSansSC-Bold",
+            fontWeight: "bold",
             padding: [0, 288, 0, 0],
           },
           value: {

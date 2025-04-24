@@ -156,7 +156,7 @@ onMounted(() => init())
 <template>
     <div class="shj-page autoAdapter" ref="pageRef">
         <!-- 全屏加载画面 -->
-        <div class="loading-overlay" v-if="pageLoading" :style="{ transform, display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }">
+        <div class="loading-overlay" v-if="pageLoading">
             <div class="loading-bg"></div>
             <div class="loading-container">
                 <div class="loader-spinner">
