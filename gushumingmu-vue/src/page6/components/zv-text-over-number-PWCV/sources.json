@@ -1,1 +1,0 @@
-[{"name":"滚动数字","id":"53","source":{"mapping":[{"mapping":"value","name":"value","label":"值","type":"number","status":true}],"static":[{"value":25}],"isAutoUpdate":false,"autoUpdateTime":60,"type":"static"}}]

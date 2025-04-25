@@ -15,5 +15,5 @@ export default ({ mode }: any) => defineConfig({
             }
         }
     },
-    base: '/web'
+    base: '/'
 })

@@ -13,7 +13,7 @@ const { currentPage } = storeToRefs(pageStore)
 const sceneOption = {"backButtonLeft":70,"backButtonBottom":5,"debugger":false,"orbitControls":{"panSpeed":1,"minPolarAngle":0,"maxPolarAngle":75,"enablePan":true,"minDistance":50,"maxDistance":300,"enableDamping":true,"enableZoom":true,"zoomSpeed":1},"widgets":[{"defaultColor":"#212121","name":"古树数量","labelStyle":{"fontFamily":"SHJ-SourceHanSansSC-Regular-otf","top":50,"color":"#FFFFFF","left":75,"gap":16,"colorStyle":{"borderRadius":0,"width":14,"height":6},"fontSize":12,"fontStyle":"normal","direction":"column"},"_sourceId":"6acha","rules":[{"min":0,"color":"#7FF08C","max":100,"label":"0-10万"},{"min":101,"color":"#5FD96E","max":201,"label":"10-50万"},{"min":202,"color":"#3EB049","max":302,"label":"50-100万"},{"min":303,"color":"#289E35","max":600,"label":"100万+"}],"id":"ieibd","type":"regionalLevel","opacity":0.5,"isHide":false},{"color":"#FFFFFF","bottom":{"color":"#FFFFFF","width":3,"opacity":1,"height":3},"format":"{value}","_sourceId":"bgicc","label":{"unit":"台","fontFamily":"SHJ-HarmonyOS_Sans_TC-Bold-ttf","color":"#FFFFFF","bg":{"paddingH":6,"paddingW":2,"borderColor":"#0D91D49E","color":"#FFFFFF00","borderRadius":6,"borderWidth":0,"borderStyle":"solid"},"bottom":2,"show":true,"fontSize":14,"unitStyle":{"fontFamily":"SHJ-Alibaba-PuHuiTi-Regular-woff","color":"#A6A6A6","show":true,"fontSize":14}},"type":"bar","isHide":false,"huiguang":{"size":1.5,"color":"#2A82E4","show":true,"opacity":0.6},"name":"物联设备数量","width":10,"id":"jk2k2","opacity":1,"height":20}],"scene":{"geojson":"","translateZ":0,"isDrilling":true,"defaultMapAdcode":100000,"background":"#020A07","translateY":0,"translateX":0,"defaultMap":"china","x":5,"y":0,"z":0,"isBackground":true},"light":{"pointLight2":{"intensity":60,"color":"#ffffff","distance":30,"show":true,"x":-4,"y":8,"z":43},"ambientLight":{"intensity":1,"color":"#FFFFFF","show":true},"directionalLight":{"intensity":2,"color":"#ffffff","show":true,"position":{"x":-22,"y":128,"z":-20},"target":{"position":{"x":0,"y":0,"z":0}}},"pointLight1":{"intensity":60,"color":"#ffffff","distance":24,"show":true,"x":1,"y":19,"z":7}},"backButtonCss":{"backgroundColor":"#35743F","borderColor":"#289E35","fontFamily":"SHJ-SourceHanSansSC-Regular-otf","color":"#FFFFFF","borderRadius":4,"backgroundImage":"","borderWidth":1,"backgroundSize":"cover","fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"backButton":true,"particle":{"material":{"size":10,"color":"#FFFFFF","opacity":0.3},"num":20,"show":true,"range":200,"dir":"up","speed":0.1},"floor":{"quan":{"color":"#007BFF","show":true},"gaoguang":{"color":"#394D41","show":true},"gridRipple":{"diffuseWidth":20,"color":"#566A78","diffuseOpacity":0.7,"alphaMap":"/web/map3d/gridRippleAlphaMap.png","repeat":100,"show":true,"diffuseSpeed":20,"diffuseColor":"#566A78","opacity":0.2,"map":"/web/map3d/gridRippleMap.png"},"rotateBorder":{"rotateBorder1":{"size":1.18,"color":"#445057","texture":"/web/map3d/rotateBorder1Map.png","show":true,"rotateSpeed":1.5,"opacity":0.5},"rotateBorder2":{"size":1.12,"color":"#445057","texture":"/web/map3d/rotateBorder2Map.png","show":true,"rotateSpeed":-4,"opacity":0.6}}},"camera":{"position":{"x":0,"y":127,"z":105},"target":[0,0,0]},"widgetControlStyle":{"backgroundColor":"#00000000","borderColor":"#5B687559","color":"#D9D9D9","backgroundImage":"","show":true,"active":{"backgroundColor":"#00000000","borderColor":"#76C287","color":"#E8E8E8","backgroundImage":"","borderWidth":1,"fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"fontStyle":"normal","hover":{"backgroundColor":"#00000000","borderColor":"#76C287","color":"#E8E8E8","backgroundImage":"","borderWidth":1,"fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"fontFamily":"SHJ-DreamHanSansCN-W1-ttf","top":85,"borderRadius":4,"left":27,"borderWidth":1,"gap":12,"width":100,"backgroundSize":"cover","fontSize":12,"borderStyle":"solid","fontWeight":600,"direction":"column","height":26},"map":{"hoverLineColor":"#CCCCCC","depth":4,"titleLabel":{"offsetX":0,"fontFamily":"SHJ-SourceHanSansSC-Bold-otf","offsetY":3,"color":"#FFFFFF","bottom":2,"show":true,"fontSize":46,"gaodeAPI":"f7d75cd912376e5ade47187998ebbd31"},"backgroundImg":{"color":"#FFFFFF","src":"https://lganv-1304359499.cos.ap-beijing.myqcloud.com/lg_cos_static/system/scene/map3d/004_bg.jpg","alphaMap":"https://lganv-1304359499.cos.ap-beijing.myqcloud.com/lg_cos_static/system/scene/map3d/004_bg.jpg","rotation":[90,-180,180],"show":true,"scale":[0.42000000000000004,0.42000000000000004,0.42000000000000004],"position":[-8.7,0.10000000000000003,11.7],"opacity":0.8},"mirrorShow":false,"sideMaterial":{"color":"#548A5E","opacity":0.8,"map":"/web/map3d/sideMap.png"},"arealabel":{"fontFamily":"SHJ-AlimamaShuHeiTi-Bold-woff","color":"#FFFFFF","bottom":2,"show":true,"fontSize":22},"lineColor":"#CCCCCC","topMaterial":{"emissive":"#000000","color":"#C9FFEA","hoverOpacity":1,"normalMap":"/web/map3d/topNormal.jpg","opacity":1,"map":"/web/map3d/004_map.jpg"},"storkeAnimation":{"color":"#FFFFFF","top":0,"texture":"/web/map3d/pathLine.png","radius":0.2,"speed":0.3,"segments":1000},"hoverDepth":1.5}}
 
 /** 数据源 */
-const sceneSources = ref([{"name":"地域等级分布","id":"6acha","source":{"mapping":[{"mapping":"province_name","name":"name","label":"地域名称","type":"string","status":false},{"mapping":"value","name":"value","label":"值","type":"number","status":false}],"static":[{"name":"河南省","value":450},{"name":"新疆维吾尔自治区","value":50},{"name":"西藏自治区","value":150},{"name":"青海省","value":150},{"name":"云南省","value":350},{"name":"四川省","value":150},{"name":"甘肃省","value":150},{"name":"宁夏回族自治区","value":150},{"name":"陕西省","value":150},{"name":"重庆市","value":350},{"name":"贵州省","value":350},{"name":"广西壮族自治区","value":250},{"name":"广东省","value":250},{"name":"海南省","value":50},{"name":"香港特别行政区","value":50},{"name":"澳门特别行政区","value":50},{"name":"湖南省","value":450},{"name":"湖北省","value":450},{"name":"山西省","value":150},{"name":"内蒙古自治区","value":150},{"name":"河北省","value":150},{"name":"山东省","value":150},{"name":"安徽省","value":450},{"name":"江西省","value":450},{"name":"福建省","value":250},{"name":"台湾省","value":250},{"name":"浙江省","value":250},{"name":"江苏省","value":250},{"name":"上海市","value":150},{"name":"山东省","value":150},{"name":"北京市","value":150},{"name":"天津市","value":150},{"name":"辽宁省","value":150},{"name":"吉林省","value":150},{"name":"黑龙江省","value":150},{"name":"长沙市","value":"300"}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"api","api":{"headers":{"token":""},"proxy":false,"isHeaders":false,"cookie":false,"type":"GET","url":"http://127.0.0.1:8080/api/dlevFh"}}},{"name":"柱体数据","id":"bgicc","source":{"mapping":[{"mapping":"name","name":"name","label":"名称","type":"string","status":true},{"mapping":"adcode","name":"adcode","label":"行政区划代码","type":"number","status":true},{"mapping":"coords","name":"coords","label":"经纬度","type":"array","status":true},{"mapping":"value","name":"value","label":"值","type":"number","status":true}],"static":[{"adcode":110000,"name":"北京市","value":50,"coords":[116.405285,39.904989]},{"adcode":120000,"name":"天津市","value":112,"coords":[117.190182,39.125596]},{"adcode":130000,"name":"河北省","value":31,"coords":[114.502461,38.045474]},{"adcode":140000,"name":"山西省","value":42,"coords":[112.549248,37.857014]},{"adcode":150000,"name":"内蒙古自治区","value":87,"coords":[111.670801,40.818311]},{"adcode":210000,"name":"辽宁省","value":45,"coords":[123.429096,41.796767]},{"adcode":220000,"name":"吉林省","value":56,"coords":[125.3245,43.886841]},{"adcode":230000,"name":"黑龙江省","value":21,"coords":[126.642464,45.756967]},{"adcode":310000,"name":"上海市","value":86,"coords":[121.472644,31.231706]},{"adcode":320000,"name":"江苏省","value":61,"coords":[118.767413,32.041544]},{"adcode":330000,"name":"浙江省","value":85,"coords":[120.153576,30.287459]},{"adcode":340000,"name":"安徽省","value":68,"coords":[117.283042,31.86119]},{"adcode":350000,"name":"福建省","value":152,"coords":[119.306239,26.075302]},{"adcode":360000,"name":"江西省","value":64,"coords":[115.892151,28.676493]},{"adcode":370000,"name":"山东省","value":12,"coords":[117.000923,36.675807]},{"adcode":410000,"name":"河南省","value":86,"coords":[113.665412,34.757975]},{"adcode":420000,"name":"湖北省","value":53,"coords":[114.298572,30.584355]},{"adcode":430000,"name":"湖南省","value":57,"coords":[112.982279,28.19409]},{"adcode":440000,"name":"广东省","value":86,"coords":[113.280637,23.125178]},{"adcode":450000,"name":"广西壮族自治区","value":86,"coords":[108.320004,22.82402]},{"adcode":460000,"name":"海南省","value":46,"coords":[110.33119,20.031971]},{"adcode":500000,"name":"重庆市","value":67,"coords":[106.504962,29.533155]},{"adcode":510000,"name":"四川省","value":210,"coords":[104.065735,30.659462]},{"adcode":520000,"name":"贵州省","value":160,"coords":[106.713478,26.578343]},{"adcode":530000,"name":"云南省","value":4,"coords":[102.712251,25.040609]},{"adcode":540000,"name":"西藏自治区","value":140,"coords":[91.132212,29.660361]},{"adcode":610000,"name":"陕西省","value":167,"coords":[108.948024,34.263161]},{"adcode":620000,"name":"甘肃省","value":247,"coords":[103.823557,36.058039]},{"adcode":630000,"name":"青海省","value":64,"coords":[101.778916,36.623178]},{"adcode":640000,"name":"宁夏回族自治区","value":50,"coords":[106.278179,38.46637]},{"adcode":650000,"name":"新疆维吾尔自治区","value":74,"coords":[87.617733,43.792818]},{"adcode":710000,"name":"台湾省","value":84,"coords":[121.509062,25.044332]},{"adcode":810000,"name":"香港特别行政区","value":13,"coords":[114.173355,22.320048]},{"adcode":820000,"name":"澳门特别行政区","value":83,"coords":[113.54909,22.198951]}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"static"}}])
+const sceneSources = ref([{"name":"地域等级分布","id":"6acha","source":{"mapping":[{"mapping":"province_name","name":"name","label":"地域名称","type":"string","status":false},{"mapping":"value","name":"value","label":"值","type":"number","status":false}],"static":[{"name":"河南省","value":450},{"name":"新疆维吾尔自治区","value":50},{"name":"西藏自治区","value":150},{"name":"青海省","value":150},{"name":"云南省","value":350},{"name":"四川省","value":150},{"name":"甘肃省","value":150},{"name":"宁夏回族自治区","value":150},{"name":"陕西省","value":150},{"name":"重庆市","value":350},{"name":"贵州省","value":350},{"name":"广西壮族自治区","value":250},{"name":"广东省","value":250},{"name":"海南省","value":50},{"name":"香港特别行政区","value":50},{"name":"澳门特别行政区","value":50},{"name":"湖南省","value":450},{"name":"湖北省","value":450},{"name":"山西省","value":150},{"name":"内蒙古自治区","value":150},{"name":"河北省","value":150},{"name":"山东省","value":150},{"name":"安徽省","value":450},{"name":"江西省","value":450},{"name":"福建省","value":250},{"name":"台湾省","value":250},{"name":"浙江省","value":250},{"name":"江苏省","value":250},{"name":"上海市","value":150},{"name":"山东省","value":150},{"name":"北京市","value":150},{"name":"天津市","value":150},{"name":"辽宁省","value":150},{"name":"吉林省","value":150},{"name":"黑龙江省","value":150},{"name":"长沙市","value":"300"}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"api","api":{"headers":{"token":""},"proxy":false,"isHeaders":false,"cookie":false,"type":"GET","url":"http://127.0.0.1:8081/api/dlevFh"}}},{"name":"柱体数据","id":"bgicc","source":{"mapping":[{"mapping":"name","name":"name","label":"名称","type":"string","status":true},{"mapping":"adcode","name":"adcode","label":"行政区划代码","type":"number","status":true},{"mapping":"coords","name":"coords","label":"经纬度","type":"array","status":true},{"mapping":"value","name":"value","label":"值","type":"number","status":true}],"static":[{"adcode":110000,"name":"北京市","value":50,"coords":[116.405285,39.904989]},{"adcode":120000,"name":"天津市","value":112,"coords":[117.190182,39.125596]},{"adcode":130000,"name":"河北省","value":31,"coords":[114.502461,38.045474]},{"adcode":140000,"name":"山西省","value":42,"coords":[112.549248,37.857014]},{"adcode":150000,"name":"内蒙古自治区","value":87,"coords":[111.670801,40.818311]},{"adcode":210000,"name":"辽宁省","value":45,"coords":[123.429096,41.796767]},{"adcode":220000,"name":"吉林省","value":56,"coords":[125.3245,43.886841]},{"adcode":230000,"name":"黑龙江省","value":21,"coords":[126.642464,45.756967]},{"adcode":310000,"name":"上海市","value":86,"coords":[121.472644,31.231706]},{"adcode":320000,"name":"江苏省","value":61,"coords":[118.767413,32.041544]},{"adcode":330000,"name":"浙江省","value":85,"coords":[120.153576,30.287459]},{"adcode":340000,"name":"安徽省","value":68,"coords":[117.283042,31.86119]},{"adcode":350000,"name":"福建省","value":152,"coords":[119.306239,26.075302]},{"adcode":360000,"name":"江西省","value":64,"coords":[115.892151,28.676493]},{"adcode":370000,"name":"山东省","value":12,"coords":[117.000923,36.675807]},{"adcode":410000,"name":"河南省","value":86,"coords":[113.665412,34.757975]},{"adcode":420000,"name":"湖北省","value":53,"coords":[114.298572,30.584355]},{"adcode":430000,"name":"湖南省","value":57,"coords":[112.982279,28.19409]},{"adcode":440000,"name":"广东省","value":86,"coords":[113.280637,23.125178]},{"adcode":450000,"name":"广西壮族自治区","value":86,"coords":[108.320004,22.82402]},{"adcode":460000,"name":"海南省","value":46,"coords":[110.33119,20.031971]},{"adcode":500000,"name":"重庆市","value":67,"coords":[106.504962,29.533155]},{"adcode":510000,"name":"四川省","value":210,"coords":[104.065735,30.659462]},{"adcode":520000,"name":"贵州省","value":160,"coords":[106.713478,26.578343]},{"adcode":530000,"name":"云南省","value":4,"coords":[102.712251,25.040609]},{"adcode":540000,"name":"西藏自治区","value":140,"coords":[91.132212,29.660361]},{"adcode":610000,"name":"陕西省","value":167,"coords":[108.948024,34.263161]},{"adcode":620000,"name":"甘肃省","value":247,"coords":[103.823557,36.058039]},{"adcode":630000,"name":"青海省","value":64,"coords":[101.778916,36.623178]},{"adcode":640000,"name":"宁夏回族自治区","value":50,"coords":[106.278179,38.46637]},{"adcode":650000,"name":"新疆维吾尔自治区","value":74,"coords":[87.617733,43.792818]},{"adcode":710000,"name":"台湾省","value":84,"coords":[121.509062,25.044332]},{"adcode":810000,"name":"香港特别行政区","value":13,"coords":[114.173355,22.320048]},{"adcode":820000,"name":"澳门特别行政区","value":83,"coords":[113.54909,22.198951]}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"static"}}])
 
 /** 全局事件 */
 const globalEvent = currentPage.value.globalEvent
@@ -144,21 +144,21 @@ const enhancedParticleSettings = {
 
 // 省级下钻后的市级数据
 const cityData = {
-  '430000': [ // 湖南省
-    {"adcode":430100,"name":"长沙市","value":120,"coords":[112.982279,28.19409]},
-    {"adcode":430200,"name":"株洲市","value":85,"coords":[113.151737,27.835806]},
-    {"adcode":430300,"name":"湘潭市","value":76,"coords":[112.944052,27.82973]},
-    {"adcode":430400,"name":"衡阳市","value":92,"coords":[112.607693,26.900358]},
-    {"adcode":430500,"name":"邵阳市","value":63,"coords":[111.46923,27.237842]},
-    {"adcode":430600,"name":"岳阳市","value":105,"coords":[113.132855,29.37029]},
-    {"adcode":430700,"name":"常德市","value":88,"coords":[111.691347,29.040225]},
-    {"adcode":430800,"name":"张家界市","value":130,"coords":[110.479921,29.127401]},
-    {"adcode":430900,"name":"益阳市","value":72,"coords":[112.355042,28.570066]},
-    {"adcode":431000,"name":"郴州市","value":67,"coords":[113.032067,25.793589]},
-    {"adcode":431100,"name":"永州市","value":58,"coords":[111.608019,26.434516]},
-    {"adcode":431200,"name":"怀化市","value":83,"coords":[109.97824,27.550082]},
-    {"adcode":431300,"name":"娄底市","value":79,"coords":[112.008497,27.728136]},
-    {"adcode":433100,"name":"湘西土家族苗族自治州","value":95,"coords":[109.739735,28.314296]}
+'430000': [ // 湖南省
+    {"adcode":430100,"name":"长沙市","value":120,"coords":[112.938882,28.228209]},
+    {"adcode":430200,"name":"株洲市","value":85,"coords":[113.133853,27.827986]},    
+    {"adcode":430300,"name":"湘潭市","value":76,"coords":[112.923916,27.829895]}, 
+    {"adcode":430400,"name":"衡阳市","value":92,"coords":[112.571996,26.893924]},       
+    {"adcode":430500,"name":"邵阳市","value":63,"coords":[111.467687,27.238892]},      
+    {"adcode":430600,"name":"岳阳市","value":105,"coords":[113.128958,29.357104]},    
+    {"adcode":430700,"name":"常德市","value":88,"coords":[111.698497,29.031673]},      
+    {"adcode":430800,"name":"张家界市","value":130,"coords":[110.479191,29.117096]},   
+    {"adcode":430900,"name":"益阳市","value":72,"coords":[112.355268,28.553860]},     
+    {"adcode":431000,"name":"郴州市","value":67,"coords":[113.014717,25.770509]},     
+    {"adcode":431100,"name":"永州市","value":58,"coords":[111.612245,26.420394]},     
+    {"adcode":431200,"name":"怀化市","value":83,"coords":[109.998488,27.554978]},      
+    {"adcode":431300,"name":"娄底市","value":79,"coords":[112.006593,27.729758]},      
+    {"adcode":433100,"name":"湘西土家族苗族自治州","value":95,"coords":[109.739172,28.311947]} 
   ],
   '440000': [ // 广东省
     {"adcode":440100,"name":"广州市","value":150,"coords":[113.280637,23.125178]},
@@ -190,6 +190,31 @@ const countyData = {
 const handleMapDrilling = (e) => {
   // 输出完整的事件对象结构，以便调试
   console.log('地图下钻事件对象:', e);
+  
+  // 触发自定义事件，通知其他组件地图已下钻
+  if (globalEvent && Array.isArray(globalEvent)) {
+    console.log('准备触发下钻事件，globalEvent:', globalEvent);
+    console.log('window对象是否存在:', typeof window !== 'undefined');
+    console.log('CustomEvent是否可用:', typeof CustomEvent !== 'undefined');
+    
+    try {
+      // 创建一个自定义事件，包含下钻信息
+      const drillDownEvent = {
+        type: 'mapDrillDown',
+        targetId: 'N5FGUZupKVoIAYY1b8iA', // 目标元素ID
+        data: { ...e, action: 'drillDown' }
+      };
+      
+      // 触发全局事件
+      console.log('触发前的事件对象:', drillDownEvent);
+      window.dispatchEvent(new CustomEvent('mapEvent', { detail: drillDownEvent }));
+      console.log('已触发地图下钻全局事件，事件详情:', drillDownEvent);
+    } catch (error) {
+      console.error('触发地图下钻事件时出错:', error);
+    }
+  } else {
+    console.warn('无法触发下钻事件，globalEvent不可用:', globalEvent);
+  }
   
   // 根据实际事件对象结构获取adcode和level
   let adcode, level;
@@ -284,6 +309,29 @@ const handleMapDrilling = (e) => {
 const handleMapBack = (e) => {
   // 输出完整的事件对象结构，以便调试
   console.log('地图返回事件对象:', e);
+  
+  // 触发自定义事件，通知其他组件地图已返回
+  if (globalEvent && Array.isArray(globalEvent)) {
+    console.log('准备触发返回事件，globalEvent:', globalEvent);
+    
+    try {
+      // 创建一个自定义事件，包含返回信息
+      const mapBackEvent = {
+        type: 'mapBack',
+        targetId: 'N5FGUZupKVoIAYY1b8iA', // 目标元素ID
+        data: { ...e, action: 'back' }
+      };
+      
+      // 触发全局事件
+      console.log('触发前的返回事件对象:', mapBackEvent);
+      window.dispatchEvent(new CustomEvent('mapEvent', { detail: mapBackEvent }));
+      console.log('已触发地图返回全局事件，事件详情:', mapBackEvent);
+    } catch (error) {
+      console.error('触发地图返回事件时出错:', error);
+    }
+  } else {
+    console.warn('无法触发返回事件，globalEvent不可用:', globalEvent);
+  }
   
   // 根据实际事件对象结构获取adcode和level
   let adcode, level;

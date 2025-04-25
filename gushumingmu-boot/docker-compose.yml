@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  gushumingmu-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gushumingmu-app:1.0
+    container_name: gushumingmu-app
+    network_mode: host  # 使用主机网络模式，直接使用宿主机网络
+    restart: always     # 容器自动重启策略
+    environment:
+      - TZ=Asia/Shanghai
+      - SPRING_PROFILES_ACTIVE=prod
+    volumes:
+      - ./log:/app/log  # 挂载日志目录
+      - ./temp:/app/temp  # 挂载临时文件目录
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
