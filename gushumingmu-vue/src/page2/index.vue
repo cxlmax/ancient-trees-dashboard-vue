@@ -1100,7 +1100,7 @@ onMounted(() => {
                                                                 id="Bu0gK7WY09vKujgn-iz0">
                                                                 <div class="layer-main">
                                                                     <div class="layer">
-                                                                        <p class="text-acut">监测到松材线虫在主干形成层扩散（感染面积15cm²）
+                                                                        <p class="text-acut">监测到松材线虫在主干形成层扩散，感染面积15cm²
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -1747,42 +1747,48 @@ onMounted(() => {
     pointer-events: none;
 }
 
-/* 下钻动画 */
+/* 下钻动画 - 从右往左的效果 */
 @keyframes drillDownEffect {
     0% {
-        transform: scale(0.8);
-        opacity: 0.5;
+        right: -200px; /* 初始时在右侧屏幕外 */
+        opacity: 0;
         filter: brightness(0.8);
     }
     50% {
-        transform: scale(1.2);
+        right: 50px; /* 过渡到右侧偏移50px */
         opacity: 0.8;
         filter: brightness(1.5);
     }
     100% {
-        transform: scale(1);
+        right: 0; /* 最终回到原位 */
         opacity: 1;
         filter: brightness(1);
     }
 }
 
-/* 返回动画 */
+/* 返回动画 - 从左往右的效果 */
 @keyframes backEffect {
     0% {
-        transform: scale(1.2);
+        right: 100px; /* 初始时在右侧偏移100px */
         opacity: 0.5;
         filter: brightness(0.8);
     }
     50% {
-        transform: scale(0.8);
+        right: -50px; /* 过渡到屏幕外 */
         opacity: 0.8;
         filter: brightness(1.5);
     }
     100% {
-        transform: scale(1);
+        right: 0; /* 最终回到原位 */
         opacity: 1;
         filter: brightness(1);
     }
+}
+
+/* 为目标元素添加相对定位，以便使用right属性 */
+#N5FGUZupKVoIAYY1b8iA {
+    position: relative;
+    right: 0;
 }
 
 .drill-down-animation {

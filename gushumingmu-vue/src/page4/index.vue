@@ -958,7 +958,7 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_eUAbqh" id="veSVqsEcr-554-lsLLxx">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-mOVl" :content="`IoT Device​​`">IoT Device​​
+                                                            <p class="text-mOVl" :content="`Weather data`">Weather data
                                                             </p>
                                                         </div>
                                                     </div>
@@ -1050,8 +1050,8 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_LIqDSV" id="ArYsJCXias8n-S1LhCBd">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-nsZz" :content="` Warning Statistics`">
-                                                                Warning Statistics</p>
+                                                            <p class="text-nsZz" :content="`Health monitoring`">
+                                                                Health monitoring</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1106,8 +1106,8 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_ztFjZs" id="f1g2z81QeiZv6OLXdzuv">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-vDjM" :content="`Regional Statistics`">
-                                                                Regional Statistics</p>
+                                                            <p class="text-vDjM" :content="`Insect infestation data`">
+                                                                Insect infestation data</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1196,7 +1196,7 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_StQZfv" id="LtmlUl6LFUCvOyTkJ-fW">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-hWyk" :content="`Famous Trees`">Famous Trees
+                                                            <p class="text-hWyk" :content="`Soil data`">Soil data
                                                             </p>
                                                         </div>
                                                     </div>
@@ -1268,8 +1268,8 @@ onMounted(() => init())
                                                 <div class="layer-wrap layer-wrap_BHSfGg" id="uAvxamxCj7kF4sqEzrpV">
                                                     <div class="layer-main">
                                                         <div class="layer">
-                                                            <p class="text-bdBq" :content="`Categorical Statistics`">
-                                                                Categorical Statistics</p>
+                                                            <p class="text-bdBq" :content="`Real-time monitoring`">
+                                                                Real-time monitoring</p>
                                                         </div>
                                                     </div>
                                                 </div>

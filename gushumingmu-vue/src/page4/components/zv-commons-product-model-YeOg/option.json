@@ -2,12 +2,12 @@
 	"environment": {
 		"sizeAuto": true,
 		"rootPosition": 0,
-		"environmentTexture": "/web/images/product-model.env",
+		"environmentTexture": "images/product-model.env",
 		"createSkybox": false,
 		"groundMirrorFresnelWeight": 1,
 		"enableGroundShadow": true,
 		"groundYBias": 0,
-		"skyboxTexture": "/web/images/product-model.env",
+		"skyboxTexture": "images/product-model.env",
 		"createGround": false,
 		"groundMirrorAmount": 1,
 		"cameraExposure": 2,
@@ -35,7 +35,7 @@
 		"position": [0, 0, 0],
 		"scaling": [3, 3, 3],
 		"type": "glb",
-		"url": "/web/3ds/最终-20250423132909170.glb",
+		"url": "3ds/最终-20250423132909170.glb",
 		"materialOptions": {
 			"alpha": 0.3,
 			"hasAlpha": true,

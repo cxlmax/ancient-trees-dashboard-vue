@@ -2,7 +2,7 @@ import { SHJDatasourceV2 } from '@shjjs/visual-ui'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-    history: createWebHistory('/web'),
+    history: createWebHistory('/'),
     routes: [
         {
             path: '/',
