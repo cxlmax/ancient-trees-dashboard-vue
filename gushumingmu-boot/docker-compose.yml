@@ -16,7 +16,7 @@ services:
       - ./log:/app/log  # 挂载日志目录
       - ./temp:/app/temp  # 挂载临时文件目录
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      test: ["CMD", "curl", "-f", "http://localhost:8090/"]
       interval: 30s
       timeout: 10s
       retries: 3

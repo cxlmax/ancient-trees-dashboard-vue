@@ -85,12 +85,12 @@ const init = async () => {
         // 预加载数据
         await preloadData()
 
-        // 确保至少显示5秒的loading画面
+        // 确保至少显示3秒的loading画面
         const currentTime = new Date().getTime()
         const elapsedTime = currentTime - startTime
-        if (elapsedTime < 5000) {
-            // 等待至少5秒
-            await new Promise(resolve => setTimeout(resolve, 5000 - elapsedTime))
+        if (elapsedTime < 3000) {
+            // 等待至少3秒
+            await new Promise(resolve => setTimeout(resolve, 3000 - elapsedTime))
         }
 
         pageLoading.value = false
@@ -208,27 +208,43 @@ const handleMapEvent = (event: CustomEvent) => {
     console.log('事件数据:', detail.data);
     
     // 检查事件是否针对目标元素
-    if (detail && detail.targetId === 'N5FGUZupKVoIAYY1b8iA') {
+    if (detail && (detail.targetId === 'N5FGUZupKVoIAYY1b8iA' || detail.targetId === 'EgwsIbwLLbngkeGAS67R')) {
       console.log('事件匹配目标元素，准备应用动画效果');
       
       // 获取目标元素，确认它存在
-      const targetElement = document.getElementById('N5FGUZupKVoIAYY1b8iA');
+      const targetElement = document.getElementById(detail.targetId);
       if (!targetElement) {
-        console.error('找不到目标元素:', 'N5FGUZupKVoIAYY1b8iA');
+        console.error('找不到目标元素:', detail.targetId);
         return;
       }
-      console.log('找到目标元素:', targetElement);
+      console.log('找到目标元素:', targetElement, detail.targetId);
       
-      // 设置动画状态
-      mapDrillState.isAnimating = true;
-      mapDrillState.action = detail.data.action;
-      console.log('已设置动画状态:', mapDrillState);
-      
-      // 动画结束后重置状态
-      setTimeout(() => {
-        mapDrillState.isAnimating = false;
-        console.log('动画状态已重置');
-      }, 1500); // 动画持续1.5秒
+      // 根据事件类型设置不同的动画顺序
+      if (detail.data.action === 'drillDown') {
+        // 下钻时：先弹出，然后弹入
+        console.log('执行下钻动画序列：先弹出，再弹入');
+        
+        // 第一步：设置为弹出状态
+        mapDrillState.isAnimating = true;
+        mapDrillState.action = 'prepare-drill';
+        
+        // 第二步：短暂延迟后，设置为弹入状态
+        setTimeout(() => {
+          mapDrillState.action = 'drillDown';
+          console.log('切换到弹入状态');
+        }, 500);
+      } else {
+        // 返回上一级时：直接应用弹出动画
+        mapDrillState.isAnimating = true;
+        mapDrillState.action = detail.data.action;
+        console.log('执行返回动画');
+        
+        // 动画结束后重置状态
+        setTimeout(() => {
+          mapDrillState.isAnimating = false;
+          console.log('动画状态已重置');
+        }, 1000);
+      }
     } else {
       console.warn('事件不匹配目标元素或目标元素ID不正确');
     }
@@ -263,16 +279,6 @@ onMounted(() => {
                 <h1 class="loading-title" content="古树名木智慧监测系统">古树名木智慧监测系统</h1>
                 <div class="loader-spinner">
                     <div class="spinner-ring"></div>
-                </div>
-                <div class="loading-text">{{ loadingText }}</div>
-            </div>
-        </div>
-
-        <!-- 数据加载中的半透明遮罩 -->
-        <div class="data-loading-overlay" v-if="dataLoading && !pageLoading" :style="{ transform }">
-            <div class="loading-container">
-                <div class="loading-progress">
-                    <div class="progress-bar" :style="{ width: apiRequests.progress + '%' }"></div>
                 </div>
                 <div class="loading-text">{{ loadingText }}</div>
             </div>
@@ -440,10 +446,12 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
+            <!-- 使用:key属性强制元素重新渲染，触发动画重置 -->
             <div class="layer-wrap layer-wrap_zEqitO" id="N5FGUZupKVoIAYY1b8iA"
+                    :key="mapDrillState.action + '-' + mapDrillState.isAnimating"
                     :class="{
-                        'drill-down-animation': mapDrillState.isAnimating && mapDrillState.action === 'drillDown',
-                        'back-animation': mapDrillState.isAnimating && mapDrillState.action === 'back'
+                        'fade-out-right': (mapDrillState.isAnimating && mapDrillState.action === 'back') || 
+                                         (mapDrillState.isAnimating && mapDrillState.action === 'prepare-drill')
                     }">
                 <div class="layer-main">
                     <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, -1961, -82)` }">
@@ -1253,7 +1261,12 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div class="layer-wrap layer-wrap_AYfjwc" id="EgwsIbwLLbngkeGAS67R">
+            <div class="layer-wrap layer-wrap_AYfjwc" id="EgwsIbwLLbngkeGAS67R"
+                    :key="mapDrillState.action + '-' + mapDrillState.isAnimating"
+                    :class="{
+                        'fade-out-left': (mapDrillState.isAnimating && mapDrillState.action === 'back') || 
+                                         (mapDrillState.isAnimating && mapDrillState.action === 'prepare-drill')
+                    }">
                 <div class="layer-main">
                     <div class="group" :style="{ transform: `matrix(1, 0, 0, 1, 45, -82)` }">
 
@@ -1732,72 +1745,46 @@ onMounted(() => {
     z-index: 10;
 }
 
-/* 添加调试边框，使元素更容易被识别 */
-#N5FGUZupKVoIAYY1b8iA::before {
-    content: '目标元素';
-    position: absolute;
-    top: -30px;
-    left: 0;
-    background-color: rgba(255, 0, 0, 0.3);
-    color: white;
-    padding: 2px 8px;
-    font-size: 12px;
-    border-radius: 4px;
-    z-index: 100;
-    pointer-events: none;
-}
 
-/* 下钻动画 - 从右往左的效果 */
-@keyframes drillDownEffect {
+/* 只需要添加弹出动画，弹入动画直接使用 SCSS 文件中已有的 fadeInRight */
+
+/* 自定义动画 */
+@keyframes fadeOutRight {
     0% {
-        right: -200px; /* 初始时在右侧屏幕外 */
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
         opacity: 0;
-        filter: brightness(0.8);
-    }
-    50% {
-        right: 50px; /* 过渡到右侧偏移50px */
-        opacity: 0.8;
-        filter: brightness(1.5);
-    }
-    100% {
-        right: 0; /* 最终回到原位 */
-        opacity: 1;
-        filter: brightness(1);
+        transform: translate3d(200%, 0, 0);
     }
 }
 
-/* 返回动画 - 从左往右的效果 */
-@keyframes backEffect {
-    0% {
-        right: 100px; /* 初始时在右侧偏移100px */
-        opacity: 0.5;
-        filter: brightness(0.8);
-    }
-    50% {
-        right: -50px; /* 过渡到屏幕外 */
-        opacity: 0.8;
-        filter: brightness(1.5);
-    }
-    100% {
-        right: 0; /* 最终回到原位 */
-        opacity: 1;
-        filter: brightness(1);
-    }
-}
-
-/* 为目标元素添加相对定位，以便使用right属性 */
-#N5FGUZupKVoIAYY1b8iA {
-    position: relative;
-    right: 0;
-}
-
-.drill-down-animation {
-    animation: drillDownEffect 1.5s ease-in-out forwards;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-}
-
-.back-animation {
-    animation: backEffect 1.5s ease-in-out forwards;
+/* 弹出右侧效果 */
+.fade-out-right > .layer-main {
+    animation: fadeOutRight 0.5s ease-in-out forwards !important;
     box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
+    z-index: 9999; /* 确保在最上层 */
+}
+
+/* 弹出左侧效果 */
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(-200%, 0, 0);
+    }
+}
+
+/* 弹出左侧效果 */
+.fade-out-left > .layer-main {
+    animation: fadeOutLeft 0.5s ease-in-out forwards !important;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
+    z-index: 9999; /* 确保在最上层 */
 }
 </style>
