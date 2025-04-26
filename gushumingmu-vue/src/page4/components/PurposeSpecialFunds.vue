@@ -184,10 +184,11 @@ const option = ref({
         formatter: "{title|{b}} ",
         fontFamily: "SourceHanSansSC-Bold",
         fontWeight: "bold",
+
         rich: {
           title: {
             color: "#D9D9D9",
-            fontSize: 15,
+            fontSize: 17,
             fontFamily: "SourceHanSansSC-Bold",
             fontWeight: "bold",
             padding: [0, 288, 0, 0],
@@ -214,11 +215,13 @@ const option = ref({
       data: maxData,
       barWidth: 10,
       z: 0,
+
       itemStyle: {
         color: "none",
         borderColor: "rgba(172,191,188,0.4)",
         borderWidth: 1,
         borderRadius: 0,
+
       },
     },
   ],

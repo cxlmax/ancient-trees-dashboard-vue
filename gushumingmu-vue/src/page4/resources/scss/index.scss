@@ -193,18 +193,13 @@
                                 align-items: center;
                                 text-align: center;
                                 letter-spacing: 6px;
-                                font-size: 54px;
+                                font-size: 35px;
                                 line-height: 2;
                                 font-style: normal;
                                 justify-content: center;
                                 font-family: AlimamaShuHeiTi-Bold;
 
-                                &::before {
-                                    content: attr(content);
-                                    position: absolute;
-                                    z-index: -1;
-                                    text-shadow: 1px 2px 7px #168C69;
-                                }
+
                             }
 
                         }
@@ -1129,7 +1124,7 @@
                                                                 align-items: center;
                                                                 text-align: center;
                                                                 letter-spacing: 2px;
-                                                                font-size: 14px;
+                                                                font-size: 17px;
                                                                 line-height: 1;
                                                                 font-style: normal;
                                                                 justify-content: center;
@@ -1438,7 +1433,7 @@
                                                                 align-items: center;
                                                                 text-align: left;
                                                                 letter-spacing: 2px;
-                                                                font-size: 14px;
+                                                                font-size: 17px;
                                                                 line-height: 1;
                                                                 font-style: normal;
                                                                 justify-content: flex-start;
@@ -1747,7 +1742,7 @@
                                                                 align-items: center;
                                                                 text-align: center;
                                                                 letter-spacing: 2px;
-                                                                font-size: 14px;
+                                                                font-size: 17px;
                                                                 line-height: 1;
                                                                 font-style: normal;
                                                                 justify-content: center;
@@ -2056,7 +2051,7 @@
                                                                 align-items: center;
                                                                 text-align: center;
                                                                 letter-spacing: 2px;
-                                                                font-size: 14px;
+                                                                font-size: 17px;
                                                                 line-height: 1;
                                                                 font-style: normal;
                                                                 justify-content: center;
@@ -2365,7 +2360,7 @@
                                                                 align-items: center;
                                                                 text-align: center;
                                                                 letter-spacing: 2px;
-                                                                font-size: 14px;
+                                                                font-size: 17px;
                                                                 line-height: 1;
                                                                 font-style: normal;
                                                                 justify-content: center;
@@ -2646,7 +2641,7 @@
                                                 }
 
                                                 .layer-wrap.layer-wrap_bAyEPw {
-                                                    width: 102px;
+                                                    width: 132px;
                                                     height: 15px;
                                                     transform: matrix(1, 0, 0, 1, 2386.0000, 253.0000);
                                                     visibility: visible;
@@ -2674,7 +2669,7 @@
                                                                 align-items: center;
                                                                 text-align: left;
                                                                 letter-spacing: 2px;
-                                                                font-size: 14px;
+                                                                font-size: 17px;
                                                                 line-height: 1;
                                                                 font-style: normal;
                                                                 justify-content: flex-start;
@@ -2959,7 +2954,7 @@
                                                                 align-items: center;
                                                                 text-align: center;
                                                                 letter-spacing: 2px;
-                                                                font-size: 14px;
+                                                                font-size: 17px;
                                                                 line-height: 1;
                                                                 font-style: normal;
                                                                 justify-content: center;
@@ -3142,14 +3137,7 @@
                                         line-height: 1;
                                         font-style: normal;
                                         justify-content: flex-start;
-                                        font-family: SourceHanSansSC-Bold;
 
-                                        &::before {
-                                            content: attr(content);
-                                            position: absolute;
-                                            z-index: -1;
-                                            text-shadow: 1px 1px 12px #19B558;
-                                        }
                                     }
 
                                 }
@@ -3497,14 +3485,7 @@
                                         line-height: 1;
                                         font-style: normal;
                                         justify-content: flex-start;
-                                        font-family: SourceHanSansSC-Bold;
 
-                                        &::before {
-                                            content: attr(content);
-                                            position: absolute;
-                                            z-index: -1;
-                                            text-shadow: 1px 1px 12px #19B558;
-                                        }
                                     }
 
                                 }
@@ -3712,14 +3693,7 @@
                                         line-height: 1;
                                         font-style: normal;
                                         justify-content: flex-start;
-                                        font-family: SourceHanSansSC-Bold;
 
-                                        &::before {
-                                            content: attr(content);
-                                            position: absolute;
-                                            z-index: -1;
-                                            text-shadow: 1px 1px 12px #19B558;
-                                        }
                                     }
 
                                 }
@@ -3941,14 +3915,7 @@
                                         line-height: 1;
                                         font-style: normal;
                                         justify-content: flex-start;
-                                        font-family: SourceHanSansSC-Bold;
 
-                                        &::before {
-                                            content: attr(content);
-                                            position: absolute;
-                                            z-index: -1;
-                                            text-shadow: 1px 1px 12px #19B558;
-                                        }
                                     }
 
                                 }
@@ -4294,14 +4261,7 @@
                                         line-height: 1;
                                         font-style: normal;
                                         justify-content: flex-start;
-                                        font-family: SourceHanSansSC-Bold;
 
-                                        &::before {
-                                            content: attr(content);
-                                            position: absolute;
-                                            z-index: -1;
-                                            text-shadow: 1px 1px 12px #19B558;
-                                        }
                                     }
 
                                 }
@@ -4328,9 +4288,9 @@
                 transform-origin: 50% 50%;
                 animation: 1000.0ms ease 0.0ms normal both running 1.0;
                 .layer-wrap.layer-wrap_HkLaUS {
-                    width: 130px;
+                    width: 180px;
                     height: 36px;
-                    transform: matrix(1, 0, 0, 1, 68.0000, 959.0000);
+                    transform: matrix(1, 0, 0, 1, 48.0000, 959.0000);
                     visibility: visible;
                     display: block;
                     z-index: 5;
@@ -4356,7 +4316,7 @@
                                 align-items: center;
                                 text-align: center;
                                 letter-spacing: 1px;
-                                font-size: 14px;
+                                font-size: 17px;
                                 line-height: 1;
                                 font-style: normal;
                                 justify-content: center;
@@ -4370,9 +4330,9 @@
                 }
 
                 .layer-wrap.layer-wrap_bPlUyX {
-                    width: 130px;
+                    width: 180px;
                     height: 36px;
-                    transform: matrix(1, 0, 0, 1, 68.0000, 915.0000);
+                    transform: matrix(1, 0, 0, 1, 48.0000, 915.0000);
                     visibility: visible;
                     display: block;
                     z-index: 4;
@@ -4398,7 +4358,7 @@
                                 align-items: center;
                                 text-align: center;
                                 letter-spacing: 1px;
-                                font-size: 14px;
+                                font-size: 17px;
                                 line-height: 1;
                                 font-style: normal;
                                 justify-content: center;
@@ -4412,9 +4372,9 @@
                 }
 
                 .layer-wrap.layer-wrap_EFIuSO {
-                    width: 130px;
+                    width: 180px;
                     height: 36px;
-                    transform: matrix(1, 0, 0, 1, 68.0000, 875.0000);
+                    transform: matrix(1, 0, 0, 1, 48.0000, 875.0000);
                     visibility: visible;
                     display: block;
                     z-index: 3;
@@ -4440,7 +4400,7 @@
                                 align-items: center;
                                 text-align: center;
                                 letter-spacing: 1px;
-                                font-size: 14px;
+                                font-size: 17px;
                                 line-height: 1;
                                 font-style: normal;
                                 justify-content: center;
@@ -4454,9 +4414,9 @@
                 }
 
                 .layer-wrap.layer-wrap_cNcgsD {
-                    width: 130px;
+                    width: 180px;
                     height: 36px;
-                    transform: matrix(1, 0, 0, 1, 68.0000, 834.0000);
+                    transform: matrix(1, 0, 0, 1, 50.0000, 834.0000);
                     visibility: visible;
                     display: block;
                     z-index: 2;
@@ -4482,7 +4442,7 @@
                                 align-items: center;
                                 text-align: center;
                                 letter-spacing: 1px;
-                                font-size: 14px;
+                                font-size: 17px;
                                 line-height: 1;
                                 font-style: normal;
                                 justify-content: center;
@@ -4648,14 +4608,7 @@
                                         line-height: 1;
                                         font-style: normal;
                                         justify-content: flex-start;
-                                        font-family: SourceHanSansSC-Bold;
 
-                                        &::before {
-                                            content: attr(content);
-                                            position: absolute;
-                                            z-index: -1;
-                                            text-shadow: 1px 1px 12px #19B558;
-                                        }
                                     }
 
                                 }
@@ -4841,14 +4794,7 @@
                                         line-height: 1;
                                         font-style: normal;
                                         justify-content: flex-start;
-                                        font-family: SourceHanSansSC-Bold;
 
-                                        &::before {
-                                            content: attr(content);
-                                            position: absolute;
-                                            z-index: -1;
-                                            text-shadow: 1px 1px 12px #19B558;
-                                        }
                                     }
 
                                 }

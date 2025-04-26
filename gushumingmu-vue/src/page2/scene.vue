@@ -1,24 +1,222 @@
 <script lang="ts" setup>
 /** 3D行政边界（省、市、县） **/
 import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 // @ts-ignore
 import { ComponentRefs } from '@shjjs/visual-ui'
 import { usePageStore } from '@/commons/stores/pageStore'
+import warningMonitor from '@/commons/services/WarningMonitor'
 
 const pageStore = usePageStore()
 const { currentPage } = storeToRefs(pageStore)
 
+// 保存原始值，用于警报解除时恢复
+const originalValues = {
+  hunanValue: null,
+  changShaValue: null,
+  alarmText: null,
+  layerWrapBackground: null,
+  layerWrapBackgroundColor: null,
+  layerWrapBorder: null
+};
+
 /** 配置参数 */
-const sceneOption = {"backButtonLeft":70,"backButtonBottom":5,"debugger":false,"orbitControls":{"panSpeed":1,"minPolarAngle":0,"maxPolarAngle":75,"enablePan":true,"minDistance":50,"maxDistance":300,"enableDamping":true,"enableZoom":true,"zoomSpeed":1},"widgets":[{"defaultColor":"#212121","name":"古树数量","labelStyle":{"fontFamily":"SHJ-SourceHanSansSC-Regular-otf","top":50,"color":"#FFFFFF","left":75,"gap":16,"colorStyle":{"borderRadius":0,"width":14,"height":6},"fontSize":12,"fontStyle":"normal","direction":"column"},"_sourceId":"6acha","rules":[{"min":0,"color":"#7FF08C","max":100,"label":"0-10万"},{"min":101,"color":"#5FD96E","max":201,"label":"10-50万"},{"min":202,"color":"#3EB049","max":302,"label":"50-100万"},{"min":303,"color":"#289E35","max":600,"label":"100万+"}],"id":"ieibd","type":"regionalLevel","opacity":0.5,"isHide":false},{"color":"#FFFFFF","bottom":{"color":"#FFFFFF","width":3,"opacity":1,"height":3},"format":"{value}","_sourceId":"bgicc","label":{"unit":"台","fontFamily":"SHJ-HarmonyOS_Sans_TC-Bold-ttf","color":"#FFFFFF","bg":{"paddingH":6,"paddingW":2,"borderColor":"#0D91D49E","color":"#FFFFFF00","borderRadius":6,"borderWidth":0,"borderStyle":"solid"},"bottom":2,"show":true,"fontSize":14,"unitStyle":{"fontFamily":"SHJ-Alibaba-PuHuiTi-Regular-woff","color":"#A6A6A6","show":true,"fontSize":14}},"type":"bar","isHide":false,"huiguang":{"size":1.5,"color":"#2A82E4","show":true,"opacity":0.6},"name":"物联设备数量","width":10,"id":"jk2k2","opacity":1,"height":20}],"scene":{"geojson":"","translateZ":0,"isDrilling":true,"defaultMapAdcode":100000,"background":"#020A07","translateY":0,"translateX":0,"defaultMap":"china","x":5,"y":0,"z":0,"isBackground":true},"light":{"pointLight2":{"intensity":60,"color":"#ffffff","distance":30,"show":true,"x":-4,"y":8,"z":43},"ambientLight":{"intensity":1,"color":"#FFFFFF","show":true},"directionalLight":{"intensity":2,"color":"#ffffff","show":true,"position":{"x":-22,"y":128,"z":-20},"target":{"position":{"x":0,"y":0,"z":0}}},"pointLight1":{"intensity":60,"color":"#ffffff","distance":24,"show":true,"x":1,"y":19,"z":7}},"backButtonCss":{"backgroundColor":"#35743F","borderColor":"#289E35","fontFamily":"SHJ-SourceHanSansSC-Regular-otf","color":"#FFFFFF","borderRadius":4,"backgroundImage":"","borderWidth":1,"backgroundSize":"cover","fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"backButton":true,"particle":{"material":{"size":10,"color":"#FFFFFF","opacity":0.3},"num":20,"show":true,"range":200,"dir":"up","speed":0.1},"floor":{"quan":{"color":"#007BFF","show":true},"gaoguang":{"color":"#394D41","show":true},"gridRipple":{"diffuseWidth":20,"color":"#566A78","diffuseOpacity":0.7,"alphaMap":"map3d/gridRippleAlphaMap.png","repeat":100,"show":true,"diffuseSpeed":20,"diffuseColor":"#566A78","opacity":0.2,"map":"map3d/gridRippleMap.png"},"rotateBorder":{"rotateBorder1":{"size":1.18,"color":"#445057","texture":"map3d/rotateBorder1Map.png","show":true,"rotateSpeed":1.5,"opacity":0.5},"rotateBorder2":{"size":1.12,"color":"#445057","texture":"map3d/rotateBorder2Map.png","show":true,"rotateSpeed":-4,"opacity":0.6}}},"camera":{"position":{"x":0,"y":127,"z":105},"target":[0,0,0]},"widgetControlStyle":{"backgroundColor":"#00000000","borderColor":"#5B687559","color":"#D9D9D9","backgroundImage":"","show":true,"active":{"backgroundColor":"#00000000","borderColor":"#76C287","color":"#E8E8E8","backgroundImage":"","borderWidth":1,"fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"fontStyle":"normal","hover":{"backgroundColor":"#00000000","borderColor":"#76C287","color":"#E8E8E8","backgroundImage":"","borderWidth":1,"fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"fontFamily":"SHJ-DreamHanSansCN-W1-ttf","top":85,"borderRadius":4,"left":27,"borderWidth":1,"gap":12,"width":100,"backgroundSize":"cover","fontSize":12,"borderStyle":"solid","fontWeight":600,"direction":"column","height":26},"map":{"hoverLineColor":"#CCCCCC","depth":4,"titleLabel":{"offsetX":0,"fontFamily":"SHJ-SourceHanSansSC-Bold-otf","offsetY":3,"color":"#FFFFFF","bottom":2,"show":true,"fontSize":46,"gaodeAPI":"f7d75cd912376e5ade47187998ebbd31"},"backgroundImg":{"color":"#FFFFFF","src":"https://lganv-1304359499.cos.ap-beijing.myqcloud.com/lg_cos_static/system/scene/map3d/004_bg.jpg","alphaMap":"https://lganv-1304359499.cos.ap-beijing.myqcloud.com/lg_cos_static/system/scene/map3d/004_bg.jpg","rotation":[90,-180,180],"show":true,"scale":[0.42000000000000004,0.42000000000000004,0.42000000000000004],"position":[-8.7,0.10000000000000003,11.7],"opacity":0.8},"mirrorShow":false,"sideMaterial":{"color":"#548A5E","opacity":0.8,"map":"map3d/sideMap.png"},"arealabel":{"fontFamily":"SHJ-AlimamaShuHeiTi-Bold-woff","color":"#FFFFFF","bottom":2,"show":true,"fontSize":22},"lineColor":"#CCCCCC","topMaterial":{"emissive":"#000000","color":"#C9FFEA","hoverOpacity":1,"normalMap":"map3d/topNormal.jpg","opacity":1,"map":"map3d/004_map.jpg"},"storkeAnimation":{"color":"#FFFFFF","top":0,"texture":"map3d/pathLine.png","radius":0.2,"speed":0.3,"segments":1000},"hoverDepth":1.5}}
+const sceneOption = {"backButtonLeft":70,"backButtonBottom":5,"debugger":false,"orbitControls":{"panSpeed":1,"minPolarAngle":0,"maxPolarAngle":75,"enablePan":true,"minDistance":50,"maxDistance":300,"enableDamping":true,"enableZoom":true,"zoomSpeed":1},"widgets":[{"defaultColor":"#212121","name":"古树数量","labelStyle":{"fontFamily":"SHJ-SourceHanSansSC-Regular-otf","top":50,"color":"#FFFFFF","left":75,"gap":16,"colorStyle":{"borderRadius":0,"width":14,"height":6},"fontSize":12,"fontStyle":"normal","direction":"column"},"_sourceId":"6acha","rules":[{"min":1000,"color":"#FF0000","max":10000,"label":"预警"},{"min":0,"color":"#7FF08C","max":100,"label":"0-10万"},{"min":101,"color":"#5FD96E","max":201,"label":"10-50万"},{"min":202,"color":"#3EB049","max":302,"label":"50-100万"},{"min":303,"color":"#289E35","max":600,"label":"100万+"}],"id":"ieibd","type":"regionalLevel","opacity":0.5,"isHide":false},{"color":"#FFFFFF","bottom":{"color":"#FFFFFF","width":3,"opacity":1,"height":3},"format":"{value}","_sourceId":"bgicc","label":{"unit":"台","fontFamily":"SHJ-HarmonyOS_Sans_TC-Bold-ttf","color":"#FFFFFF","bg":{"paddingH":6,"paddingW":2,"borderColor":"#0D91D49E","color":"#FFFFFF00","borderRadius":6,"borderWidth":0,"borderStyle":"solid"},"bottom":2,"show":true,"fontSize":14,"unitStyle":{"fontFamily":"SHJ-Alibaba-PuHuiTi-Regular-woff","color":"#A6A6A6","show":true,"fontSize":14}},"type":"bar","isHide":false,"huiguang":{"size":1.5,"color":"#2A82E4","show":true,"opacity":0.6},"name":"物联设备数量","width":10,"id":"jk2k2","opacity":1,"height":20}],"scene":{"geojson":"","translateZ":0,"isDrilling":true,"defaultMapAdcode":100000,"background":"#020A07","translateY":0,"translateX":0,"defaultMap":"china","x":5,"y":0,"z":0,"isBackground":true},"light":{"pointLight2":{"intensity":60,"color":"#ffffff","distance":30,"show":true,"x":-4,"y":8,"z":43},"ambientLight":{"intensity":1,"color":"#FFFFFF","show":true},"directionalLight":{"intensity":2,"color":"#ffffff","show":true,"position":{"x":-22,"y":128,"z":-20},"target":{"position":{"x":0,"y":0,"z":0}}},"pointLight1":{"intensity":60,"color":"#ffffff","distance":24,"show":true,"x":1,"y":19,"z":7}},"backButtonCss":{"backgroundColor":"#35743F","borderColor":"#289E35","fontFamily":"SHJ-SourceHanSansSC-Regular-otf","color":"#FFFFFF","borderRadius":4,"backgroundImage":"","borderWidth":1,"backgroundSize":"cover","fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"backButton":true,"particle":{"material":{"size":10,"color":"#FFFFFF","opacity":0.3},"num":20,"show":true,"range":200,"dir":"up","speed":0.1},"floor":{"quan":{"color":"#007BFF","show":true},"gaoguang":{"color":"#394D41","show":true},"gridRipple":{"diffuseWidth":20,"color":"#566A78","diffuseOpacity":0.7,"alphaMap":"map3d/gridRippleAlphaMap.png","repeat":100,"show":true,"diffuseSpeed":20,"diffuseColor":"#566A78","opacity":0.2,"map":"map3d/gridRippleMap.png"},"rotateBorder":{"rotateBorder1":{"size":1.18,"color":"#445057","texture":"map3d/rotateBorder1Map.png","show":true,"rotateSpeed":1.5,"opacity":0.5},"rotateBorder2":{"size":1.12,"color":"#445057","texture":"map3d/rotateBorder2Map.png","show":true,"rotateSpeed":-4,"opacity":0.6}}},"camera":{"position":{"x":0,"y":127,"z":105},"target":[0,0,0]},"widgetControlStyle":{"backgroundColor":"#00000000","borderColor":"#5B687559","color":"#D9D9D9","backgroundImage":"","show":true,"active":{"backgroundColor":"#00000000","borderColor":"#76C287","color":"#E8E8E8","backgroundImage":"","borderWidth":1,"fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"fontStyle":"normal","hover":{"backgroundColor":"#00000000","borderColor":"#76C287","color":"#E8E8E8","backgroundImage":"","borderWidth":1,"fontSize":12,"fontStyle":"normal","borderStyle":"solid","fontWeight":600},"fontFamily":"SHJ-DreamHanSansCN-W1-ttf","top":85,"borderRadius":4,"left":27,"borderWidth":1,"gap":12,"width":100,"backgroundSize":"cover","fontSize":12,"borderStyle":"solid","fontWeight":600,"direction":"column","height":26},"map":{"hoverLineColor":"#CCCCCC","depth":4,"titleLabel":{"offsetX":0,"fontFamily":"SHJ-SourceHanSansSC-Bold-otf","offsetY":3,"color":"#FFFFFF","bottom":2,"show":true,"fontSize":46,"gaodeAPI":"f7d75cd912376e5ade47187998ebbd31"},"backgroundImg":{"color":"#FFFFFF","src":"https://lganv-1304359499.cos.ap-beijing.myqcloud.com/lg_cos_static/system/scene/map3d/004_bg.jpg","alphaMap":"https://lganv-1304359499.cos.ap-beijing.myqcloud.com/lg_cos_static/system/scene/map3d/004_bg.jpg","rotation":[90,-180,180],"show":true,"scale":[0.42000000000000004,0.42000000000000004,0.42000000000000004],"position":[-8.7,0.10000000000000003,11.7],"opacity":0.8},"mirrorShow":false,"sideMaterial":{"color":"#548A5E","opacity":0.8,"map":"map3d/sideMap.png"},"arealabel":{"fontFamily":"SHJ-AlimamaShuHeiTi-Bold-woff","color":"#FFFFFF","bottom":2,"show":true,"fontSize":22},"lineColor":"#CCCCCC","topMaterial":{"emissive":"#000000","color":"#C9FFEA","hoverOpacity":1,"normalMap":"map3d/topNormal.jpg","opacity":1,"map":"map3d/004_map.jpg"},"storkeAnimation":{"color":"#FFFFFF","top":0,"texture":"map3d/pathLine.png","radius":0.2,"speed":0.3,"segments":1000},"hoverDepth":1.5}}
+
+
 
 /** 数据源 */
-const sceneSources = ref([{"name":"地域等级分布","id":"6acha","source":{"mapping":[{"mapping":"province_name","name":"name","label":"地域名称","type":"string","status":false},{"mapping":"value","name":"value","label":"值","type":"number","status":false}],"static":[{"name":"河南省","value":450},{"name":"新疆维吾尔自治区","value":50},{"name":"西藏自治区","value":150},{"name":"青海省","value":150},{"name":"云南省","value":350},{"name":"四川省","value":150},{"name":"甘肃省","value":150},{"name":"宁夏回族自治区","value":150},{"name":"陕西省","value":150},{"name":"重庆市","value":350},{"name":"贵州省","value":350},{"name":"广西壮族自治区","value":250},{"name":"广东省","value":250},{"name":"海南省","value":50},{"name":"香港特别行政区","value":50},{"name":"澳门特别行政区","value":50},{"name":"湖南省","value":450},{"name":"湖北省","value":450},{"name":"山西省","value":150},{"name":"内蒙古自治区","value":150},{"name":"河北省","value":150},{"name":"山东省","value":150},{"name":"安徽省","value":450},{"name":"江西省","value":450},{"name":"福建省","value":250},{"name":"台湾省","value":250},{"name":"浙江省","value":250},{"name":"江苏省","value":250},{"name":"上海市","value":150},{"name":"山东省","value":150},{"name":"北京市","value":150},{"name":"天津市","value":150},{"name":"辽宁省","value":150},{"name":"吉林省","value":150},{"name":"黑龙江省","value":150},{"name":"长沙市","value":"300"}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"api","api":{"headers":{"token":""},"proxy":false,"isHeaders":false,"cookie":false,"type":"GET","url":"http://183.134.89.178:8090/api/dlevFh"}}},{"name":"柱体数据","id":"bgicc","source":{"mapping":[{"mapping":"name","name":"name","label":"名称","type":"string","status":true},{"mapping":"adcode","name":"adcode","label":"行政区划代码","type":"number","status":true},{"mapping":"coords","name":"coords","label":"经纬度","type":"array","status":true},{"mapping":"value","name":"value","label":"值","type":"number","status":true}],"static":[{"adcode":110000,"name":"北京市","value":50,"coords":[116.405285,39.904989]},{"adcode":120000,"name":"天津市","value":112,"coords":[117.190182,39.125596]},{"adcode":130000,"name":"河北省","value":31,"coords":[114.502461,38.045474]},{"adcode":140000,"name":"山西省","value":42,"coords":[112.549248,37.857014]},{"adcode":150000,"name":"内蒙古自治区","value":87,"coords":[111.670801,40.818311]},{"adcode":210000,"name":"辽宁省","value":45,"coords":[123.429096,41.796767]},{"adcode":220000,"name":"吉林省","value":56,"coords":[125.3245,43.886841]},{"adcode":230000,"name":"黑龙江省","value":21,"coords":[126.642464,45.756967]},{"adcode":310000,"name":"上海市","value":86,"coords":[121.472644,31.231706]},{"adcode":320000,"name":"江苏省","value":61,"coords":[118.767413,32.041544]},{"adcode":330000,"name":"浙江省","value":85,"coords":[120.153576,30.287459]},{"adcode":340000,"name":"安徽省","value":68,"coords":[117.283042,31.86119]},{"adcode":350000,"name":"福建省","value":152,"coords":[119.306239,26.075302]},{"adcode":360000,"name":"江西省","value":64,"coords":[115.892151,28.676493]},{"adcode":370000,"name":"山东省","value":12,"coords":[117.000923,36.675807]},{"adcode":410000,"name":"河南省","value":86,"coords":[113.665412,34.757975]},{"adcode":420000,"name":"湖北省","value":53,"coords":[114.298572,30.584355]},{"adcode":430000,"name":"湖南省","value":57,"coords":[112.982279,28.19409]},{"adcode":440000,"name":"广东省","value":86,"coords":[113.280637,23.125178]},{"adcode":450000,"name":"广西壮族自治区","value":86,"coords":[108.320004,22.82402]},{"adcode":460000,"name":"海南省","value":46,"coords":[110.33119,20.031971]},{"adcode":500000,"name":"重庆市","value":67,"coords":[106.504962,29.533155]},{"adcode":510000,"name":"四川省","value":210,"coords":[104.065735,30.659462]},{"adcode":520000,"name":"贵州省","value":160,"coords":[106.713478,26.578343]},{"adcode":530000,"name":"云南省","value":4,"coords":[102.712251,25.040609]},{"adcode":540000,"name":"西藏自治区","value":140,"coords":[91.132212,29.660361]},{"adcode":610000,"name":"陕西省","value":167,"coords":[108.948024,34.263161]},{"adcode":620000,"name":"甘肃省","value":247,"coords":[103.823557,36.058039]},{"adcode":630000,"name":"青海省","value":64,"coords":[101.778916,36.623178]},{"adcode":640000,"name":"宁夏回族自治区","value":50,"coords":[106.278179,38.46637]},{"adcode":650000,"name":"新疆维吾尔自治区","value":74,"coords":[87.617733,43.792818]},{"adcode":710000,"name":"台湾省","value":84,"coords":[121.509062,25.044332]},{"adcode":810000,"name":"香港特别行政区","value":13,"coords":[114.173355,22.320048]},{"adcode":820000,"name":"澳门特别行政区","value":83,"coords":[113.54909,22.198951]}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"static"}}])
+const sceneSources = ref([{"name":"地域等级分布","id":"6acha","source":{"mapping":[{"mapping":"province_name","name":"name","label":"地域名称","type":"string","status":false},{"mapping":"value","name":"value","label":"值","type":"number","status":false}],"static":[{"name":"河南省","value":450},{"name":"新疆维吾尔自治区","value":30},{"name":"西藏自治区","value":150},{"name":"青海省","value":150},{"name":"云南省","value":350},{"name":"四川省","value":150},{"name":"甘肃省","value":150},{"name":"宁夏回族自治区","value":150},{"name":"陕西省","value":150},{"name":"重庆市","value":350},{"name":"贵州省","value":350},{"name":"广西壮族自治区","value":250},{"name":"广东省","value":250},{"name":"海南省","value":50},{"name":"香港特别行政区","value":50},{"name":"澳门特别行政区","value":50},{"name":"湖南省","value":450},{"name":"湖北省","value":450},{"name":"山西省","value":150},{"name":"内蒙古自治区","value":150},{"name":"河北省","value":150},{"name":"山东省","value":150},{"name":"安徽省","value":450},{"name":"江西省","value":450},{"name":"福建省","value":250},{"name":"台湾省","value":250},{"name":"浙江省","value":250},{"name":"江苏省","value":250},{"name":"上海市","value":150},{"name":"山东省","value":150},{"name":"北京市","value":150},{"name":"天津市","value":150},{"name":"辽宁省","value":150},{"name":"吉林省","value":150},{"name":"黑龙江省","value":150},{"name":"长沙市","value":"300"}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"api","api":{"headers":{"token":""},"proxy":false,"isHeaders":false,"cookie":false,"type":"GET","url":"http://183.134.89.178:8090/api/dlevFh"}}},{"name":"柱体数据","id":"bgicc","source":{"mapping":[{"mapping":"name","name":"name","label":"名称","type":"string","status":true},{"mapping":"adcode","name":"adcode","label":"行政区划代码","type":"number","status":true},{"mapping":"coords","name":"coords","label":"经纬度","type":"array","status":true},{"mapping":"value","name":"value","label":"值","type":"number","status":true}],"static":[{"adcode":110000,"name":"北京市","value":50,"coords":[116.405285,39.904989]},{"adcode":120000,"name":"天津市","value":112,"coords":[117.190182,39.125596]},{"adcode":130000,"name":"河北省","value":31,"coords":[114.502461,38.045474]},{"adcode":140000,"name":"山西省","value":42,"coords":[112.549248,37.857014]},{"adcode":150000,"name":"内蒙古自治区","value":87,"coords":[111.670801,40.818311]},{"adcode":210000,"name":"辽宁省","value":45,"coords":[123.429096,41.796767]},{"adcode":220000,"name":"吉林省","value":56,"coords":[125.3245,43.886841]},{"adcode":230000,"name":"黑龙江省","value":21,"coords":[126.642464,45.756967]},{"adcode":310000,"name":"上海市","value":86,"coords":[121.472644,31.231706]},{"adcode":320000,"name":"江苏省","value":61,"coords":[118.767413,32.041544]},{"adcode":330000,"name":"浙江省","value":85,"coords":[120.153576,30.287459]},{"adcode":340000,"name":"安徽省","value":68,"coords":[117.283042,31.86119]},{"adcode":350000,"name":"福建省","value":152,"coords":[119.306239,26.075302]},{"adcode":360000,"name":"江西省","value":64,"coords":[115.892151,28.676493]},{"adcode":370000,"name":"山东省","value":12,"coords":[117.000923,36.675807]},{"adcode":410000,"name":"河南省","value":86,"coords":[113.665412,34.757975]},{"adcode":420000,"name":"湖北省","value":53,"coords":[114.298572,30.584355]},{"adcode":430000,"name":"湖南省","value":57,"coords":[112.982279,28.19409]},{"adcode":440000,"name":"广东省","value":86,"coords":[113.280637,23.125178]},{"adcode":450000,"name":"广西壮族自治区","value":86,"coords":[108.320004,22.82402]},{"adcode":460000,"name":"海南省","value":46,"coords":[110.33119,20.031971]},{"adcode":500000,"name":"重庆市","value":67,"coords":[106.504962,29.533155]},{"adcode":510000,"name":"四川省","value":210,"coords":[104.065735,30.659462]},{"adcode":520000,"name":"贵州省","value":160,"coords":[106.713478,26.578343]},{"adcode":530000,"name":"云南省","value":4,"coords":[102.712251,25.040609]},{"adcode":540000,"name":"西藏自治区","value":140,"coords":[91.132212,29.660361]},{"adcode":610000,"name":"陕西省","value":167,"coords":[108.948024,34.263161]},{"adcode":620000,"name":"甘肃省","value":247,"coords":[103.823557,36.058039]},{"adcode":630000,"name":"青海省","value":64,"coords":[101.778916,36.623178]},{"adcode":640000,"name":"宁夏回族自治区","value":50,"coords":[106.278179,38.46637]},{"adcode":650000,"name":"新疆维吾尔自治区","value":74,"coords":[87.617733,43.792818]},{"adcode":710000,"name":"台湾省","value":84,"coords":[121.509062,25.044332]},{"adcode":810000,"name":"香港特别行政区","value":13,"coords":[114.173355,22.320048]},{"adcode":820000,"name":"澳门特别行政区","value":83,"coords":[113.54909,22.198951]}],"isAutoUpdate":false,"autoUpdateTime":60,"storage":{"setField":"","getType":0,"getField":"","setType":0},"type":"static"}}])
 
 /** 全局事件 */
 // 确保即使 currentPage.value.globalEvent 不存在，也有一个默认的数组
 // 这样下钻和返回事件才能正常触发
 const globalEvent = currentPage.value.globalEvent || ['mapEvent']
+
+/**
+ * 处理警报状态变化
+ * @param {boolean} isWarning - 是否处于警报状态
+ */
+const handleWarningChange = (isWarning) => {
+  console.log('警报状态变化:', isWarning ? '警报中' : '正常');
+  
+  // 创建当前数据源的完整深拷贝，确保引用地址变化
+  const newSources = JSON.parse(JSON.stringify(sceneSources.value));
+  if (!newSources || newSources.length < 2) return;
+  
+  // 查找湖南省数据
+  const provincesData = newSources[0].source.static;
+  const hunanIndex = provincesData.findIndex(item => item.name === '湖南省');
+  
+  // 查找长沙市数据
+  const barData = newSources[0].source.static;
+  // 使用类型断言确保TypeScript不会报错
+  const changShaIndex = barData.findIndex((item: any) => item.adcode === 430100);
+  
+  // // 查找cityData中的长沙市数据
+  // const hunanCityData = cityData['430000'];
+  // const changShaCityIndex = hunanCityData.findIndex(item => item.adcode === 430100);
+  
+  if (isWarning) {
+    if (hunanIndex !== -1) {
+      originalValues.hunanValue = provincesData[hunanIndex].value;
+      provincesData[hunanIndex].value = 5555 as any;
+      console.log('触发警报湖南：修改为5555', typeof provincesData[hunanIndex].value);
+    }
+    if (changShaIndex !== -1) {
+      originalValues.changShaValue = barData[changShaIndex].value;
+      barData[changShaIndex].value = 5555 as any;
+      console.log('触发警报长沙：修改为5555');
+    }
+    
+    // 修改警报文字内容
+    setTimeout(() => {
+      console.log('开始查找警报元素...');
+      
+      // 查找文字元素
+      const alarmTextElement = document.querySelector('.text-qANq');
+      console.log('警报文字元素:', alarmTextElement);
+      
+      if (alarmTextElement) {
+        originalValues.alarmText = alarmTextElement.textContent;
+        alarmTextElement.textContent = '长沙发生大风灾害，请尽快处理';
+        console.log('文字已修改为:', alarmTextElement.textContent);
+      } else {
+        console.log('未找到文字元素 .text-qANq');
+        // 尝试使用更通用的选择器查找
+        const allParagraphs = document.querySelectorAll('p');
+        console.log('页面中的所有p元素数量:', allParagraphs.length);
+      }
+      
+      // 为层元素添加红色背景 - 使用您提供的选择器
+      const layerWrapElement = document.querySelector('.layer-wrap_cdRQJj');
+      console.log('层元素:', layerWrapElement);
+      
+      if (layerWrapElement) {
+        // 保存原始样式
+        const htmlElement = layerWrapElement as HTMLElement;
+        originalValues.layerWrapBackground = htmlElement.style.background;
+        originalValues.layerWrapBackgroundColor = htmlElement.style.backgroundColor;
+        originalValues.layerWrapBorder = htmlElement.style.border;
+        
+        // 设置多个样式属性以确保生效
+        htmlElement.style.setProperty('background-color', 'rgba(255,0,0,0.1)', 'important');
+        
+        console.log('背景已设置为红色，使用了!important');
+      } 
+    }, 100);
+
+    // if (changShaCityIndex !== -1) {
+    //   hunanCityData[changShaCityIndex].value = 5555;
+    // }
+    
+    // 触发全局警报效果
+    const alarmButton = document.querySelector('.alarm-button');
+    if (alarmButton) {
+      // 使用类型断言确保TypeScript不会报错
+      (alarmButton as HTMLElement).click();
+    }
+  } else {
+    // 警报解除时：恢复原始值
+    if (hunanIndex !== -1 && originalValues.hunanValue) {
+      provincesData[hunanIndex].value = originalValues.hunanValue;
+      console.log('警报解除湖南：恢复原始值', originalValues.hunanValue);
+    }
+    
+    if (changShaIndex !== -1 && originalValues.changShaValue) {
+      barData[changShaIndex].value = originalValues.changShaValue;
+      console.log('警报解除长沙：恢复原始值', originalValues.changShaValue);
+    }
+    
+    // 恢复警报文字内容
+    setTimeout(() => {
+      console.log('开始恢复警报元素...');
+      
+      const alarmTextElement = document.querySelector('.text-qANq');
+      console.log('恢复时查找警报文字元素:', alarmTextElement);
+      
+      if (alarmTextElement && originalValues.alarmText) {
+        alarmTextElement.textContent = originalValues.alarmText;
+        console.log('文字已恢复为原值:', originalValues.alarmText);
+      } else {
+        console.log('恢复时未找到文字元素或原值');
+      }
+      
+      // 恢复层元素的背景 - 使用您提供的选择器
+      const layerWrapElement = document.querySelector('.layer-wrap_cdRQJj');
+      console.log('恢复时查找层元素:', layerWrapElement);
+      
+      if (layerWrapElement) {
+        const htmlElement = layerWrapElement as HTMLElement;
+        
+        // 恢复所有样式属性
+        htmlElement.style.removeProperty('background-color');
+        htmlElement.style.removeProperty('background');
+        htmlElement.style.removeProperty('border');
+        
+        // 如果有原始值，则设置回原始值
+        if (originalValues.layerWrapBackground !== undefined) {
+          htmlElement.style.background = originalValues.layerWrapBackground;
+        }
+        if (originalValues.layerWrapBackgroundColor !== undefined) {
+          htmlElement.style.backgroundColor = originalValues.layerWrapBackgroundColor;
+        }
+        if (originalValues.layerWrapBorder !== undefined) {
+          htmlElement.style.border = originalValues.layerWrapBorder;
+        }
+        
+        // 恢复子元素样式
+        const layerMain = layerWrapElement.querySelector('.layer-main');
+        if (layerMain) {
+          (layerMain as HTMLElement).style.removeProperty('background-color');
+        }
+        
+        console.log('背景已恢复为原值');
+      } else {
+        console.log('恢复时未找到层元素 .layer-wrap_cdRQJj');
+        
+        // 尝试使用ID选择器
+        const elementById = document.getElementById('ZWJem--Id3bb_6fmxcyo');
+        if (elementById) {
+          console.log('通过ID找到元素，恢复样式');
+          (elementById as HTMLElement).style.removeProperty('background-color');
+          (elementById as HTMLElement).style.removeProperty('border');
+        } else {
+          // 尝试使用更通用的选择器
+          const allLayers = document.querySelectorAll('[class*="layer-wrap"]');
+          if (allLayers.length > 0) {
+            // 恢复第一个元素的样式
+            (allLayers[0] as HTMLElement).style.removeProperty('background-color');
+            (allLayers[0] as HTMLElement).style.removeProperty('border');
+          }
+        }
+      }
+    }, 100);
+    
+    // if (changShaCityIndex !== -1) {
+    //   hunanCityData[changShaCityIndex].value = 120; // 恢复默认值
+    // }
+  }
+  
+  // 替换整个引用，确保 Vue 能够检测到变化并触发重新渲染
+  sceneSources.value = newSources;  
+  console.log(sceneSources.value);
+  console.log('数据已更新，触发地图重新渲染');
+};
+
+// 组件挂载时启动监控服务
+onMounted(() => {
+  // 注册警报状态变化回调
+  warningMonitor.onWarningChange(handleWarningChange);
+  // 启动警报监控，每10秒检查一次
+  warningMonitor.startMonitoring(10000);
+});
+
+// 组件卸载前停止监控服务
+onBeforeUnmount(() => {
+  warningMonitor.removeCallback(handleWarningChange);
+  warningMonitor.stopMonitoring();
+});
 
 // 保存原始背景图片URL，以便在返回国家级别时恢复
 const originalBackgroundImg = {
@@ -147,7 +345,7 @@ const enhancedParticleSettings = {
 // 省级下钻后的市级数据
 const cityData = {
 '430000': [ // 湖南省
-    {"adcode":430100,"name":"长沙市","value":120,"coords":[112.938882,28.228209]},
+    {"adcode":430100,"name":"长沙市","value":55,"coords":[112.938882,28.228209]}, // 警报时会被修改为-1
     {"adcode":430200,"name":"株洲市","value":85,"coords":[113.133853,27.827986]},    
     {"adcode":430300,"name":"湘潭市","value":76,"coords":[112.923916,27.829895]}, 
     {"adcode":430400,"name":"衡阳市","value":92,"coords":[112.571996,26.893924]},       
@@ -192,6 +390,7 @@ const countyData = {
 const handleMapDrilling = (e) => {
   // 输出完整的事件对象结构，以便调试
   console.log('地图下钻事件对象:', e);
+  console.log(sceneSources.value);
   
   // 触发自定义事件，通知其他组件地图已下钻
   if (globalEvent && Array.isArray(globalEvent)) {

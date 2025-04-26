@@ -35,7 +35,7 @@
 		"position": [0, 0, 0],
 		"scaling": [3, 3, 3],
 		"type": "glb",
-		"url": "3ds/最终-20250423132909170.glb",
+		"url": "http://qiniu.zhouchuanbaofu.cn/3dtree.glb",
 		"materialOptions": {
 			"alpha": 0.3,
 			"hasAlpha": true,

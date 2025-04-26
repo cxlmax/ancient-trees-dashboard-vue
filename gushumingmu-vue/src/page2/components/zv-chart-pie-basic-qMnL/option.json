@@ -83,7 +83,7 @@
 			"borderWidth": 0
 		},
 		"selectedMode": "single",
-		"name": "基础饼图",
+		"name": "树种统计",
 		"avoidLabelOverlap": false,
 		"emphasis": {
 			"itemStyle": {

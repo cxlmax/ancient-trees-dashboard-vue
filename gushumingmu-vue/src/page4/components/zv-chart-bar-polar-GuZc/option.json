@@ -1,1 +1,92 @@
-{"polar":{"radius":[30,"80%"]},"radiusAxis":{"type":"category"},"color":["#1DAB7E"],"series":[{"largeThreshold":400,"large":false,"showBackground":false,"backgroundStyle":{"borderType":"solid","borderColor":"#000","color":"rgba(180, 180, 180, 0.2)","borderRadius":0,"borderWidth":0,"opacity":1},"emphasis":{"itemStyle":{"borderType":"solid","shadowOffsetX":0,"borderColor":"#000","shadowOffsetY":0,"shadowBlur":0,"borderWidth":0,"opacity":1,"shadowColor":""},"label":{"rotate":0,"color":"#fff","show":true,"fontSize":12,"position":"outside","fontStyle":"normal","fontWeight":"normal"}},"itemStyle":{"borderType":"solid","shadowOffsetX":0,"borderColor":"#000","shadowOffsetY":0,"borderRadius":0,"shadowBlur":0,"borderWidth":0,"opacity":1,"shadowColor":""},"coordinateSystem":"polar","label":{"formatter":"{b}","rotate":0,"color":"#fff","show":true,"fontSize":12,"position":"middle","fontStyle":"normal","fontWeight":"normal"},"type":"bar"}],"tooltip":{"padding":8,"backgroundColor":"#171717","borderColor":"#3D3D3D","triggerOn":"mousemove|click","borderWidth":1,"show":true,"trigger":"item","textStyle":{"color":"#DBDBDB","textShadowColor":"","fontSize":16,"textShadowOffsetX":0,"textShadowOffsetY":0,"fontStyle":"normal","fontWeight":"normal","textShadowBlur":0},"showDelay":0,"transitionDuration":0.4,"hideDelay":100},"angleAxis":{"startAngle":75,"max":4}}
+{
+	"polar": {
+		"radius": [30, "80%"]
+	},
+	"radiusAxis": {
+		"type": "category"
+	},
+	"color": ["#1DAB7E"],
+	"series": [{
+		"largeThreshold": 40,
+		"large": false,
+		"showBackground": false,
+		"backgroundStyle": {
+			"borderType": "solid",
+			"borderColor": "#000",
+			"color": "rgba(180, 180, 180, 0.2)",
+			"borderRadius": 0,
+			"borderWidth": 0,
+			"opacity": 1
+		},
+		"emphasis": {
+			"itemStyle": {
+				"borderType": "solid",
+				"shadowOffsetX": 0,
+				"borderColor": "#000",
+				"shadowOffsetY": 0,
+				"shadowBlur": 0,
+				"borderWidth": 0,
+				"opacity": 1,
+				"shadowColor": ""
+			},
+			"label": {
+				"rotate": 0,
+				"color": "#fff",
+				"show": true,
+				"fontSize": 16,
+				"position": "outside",
+				"fontStyle": "normal",
+				"fontWeight": "normal"
+			}
+		},
+		"itemStyle": {
+			"borderType": "solid",
+			"shadowOffsetX": 0,
+			"borderColor": "#000",
+			"shadowOffsetY": 0,
+			"borderRadius": 0,
+			"shadowBlur": 0,
+			"borderWidth": 0,
+			"opacity": 1,
+			"shadowColor": ""
+		},
+		"coordinateSystem": "polar",
+		"label": {
+			"formatter": "{b}",
+			"rotate": 0,
+			"color": "#fff",
+			"show": true,
+			"fontSize": 16,
+			"position": "middle",
+			"fontStyle": "normal",
+			"fontWeight": "bold"
+		},
+		"type": "bar"
+	}],
+	"tooltip": {
+		"padding": 8,
+		"backgroundColor": "#171717",
+		"borderColor": "#3D3D3D",
+		"triggerOn": "mousemove|click",
+		"borderWidth": 1,
+		"show": true,
+		"trigger": "item",
+		"textStyle": {
+			"color": "#DBDBDB",
+			"textShadowColor": "",
+			"fontSize": 16,
+			"textShadowOffsetX": 0,
+			"textShadowOffsetY": 0,
+			"fontStyle": "normal",
+			"fontWeight": "normal",
+			"textShadowBlur": 0
+		},
+		"showDelay": 0,
+		"transitionDuration": 0.4,
+		"hideDelay": 100
+	},
+	"angleAxis": {
+		"startAngle": 75,
+		"max": 4
+	}
+}
