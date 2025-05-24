@@ -48,7 +48,7 @@ class WarningMonitor {
    */
   async checkWarning() {
     try {
-      const response = await axios.get('http://127.0.0.1:8090/api/iswarning');
+      const response = await axios.get('http://183.134.89.178:8090/api/iswarning');
       const data = response.data;
       
       if (Array.isArray(data) && data.length > 0) {

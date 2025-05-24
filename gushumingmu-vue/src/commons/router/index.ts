@@ -14,6 +14,11 @@ const router = createRouter({
             component: () => import('@/page2/index.vue')
         },
         {
+            path: '/page3',
+            name: '古树名木数据大屏',
+            component: () => import('@/page3/index.vue')
+        },
+        {
             path: '/page4',
             name: '古树',
             component: () => import('@/page4/index.vue')

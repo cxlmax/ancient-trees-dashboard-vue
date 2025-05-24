@@ -1,0 +1,15 @@
+{
+  "id": "page3",
+  "name": "古树名木智慧监测大屏",
+  "description": "古树名木智慧监测系统数据可视化大屏",
+  "version": "1.0.0",
+  "author": "Cascade",
+  "environments": {
+    "development": {
+      "baseUrl": "/api"
+    },
+    "production": {
+      "baseUrl": "/api"
+    }
+  }
+}
